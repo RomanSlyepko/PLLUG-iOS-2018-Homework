@@ -18,7 +18,7 @@ class BookSortVC: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
     var who : Character = " "
     
-    var options = ["No sort","Book Name ↓","Book Name ↑","Author Name ↓","Author Name ↑","Puplished ↓","Published ↑"]
+    var options = [String]()
     
     var choise = Int()
     
