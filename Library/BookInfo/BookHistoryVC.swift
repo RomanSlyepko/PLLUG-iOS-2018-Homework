@@ -16,6 +16,8 @@ class BookHistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     var library = Library()
     
+    var k = Int()
+    
     var book = Book()
     
     var bookHistory = [History]()
@@ -34,11 +36,11 @@ class BookHistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         table.dataSource = self
         searchBar.delegate = self
         
-        allFiltersArray = sort(sortedСoefficient: k())
+        allFiltersArray = sort(filterСoefficient: f(), sortedСoefficient: k)
         
     }
     
-    func k()->Int{
+    func f()->Int{
         return segment!.selectedSegmentIndex
     }
     
@@ -66,13 +68,13 @@ class BookHistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     @IBAction func segmentTap(_ sender: Any) {
         UIView .performWithoutAnimation {
             table.isHidden = false
-            allFiltersArray = sort(sortedСoefficient: k())
+            allFiltersArray = sort(filterСoefficient: f(), sortedСoefficient: k)
             self.table.reloadData()
         }
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        allFiltersArray = sort(sortedСoefficient: k()).filter({ history -> Bool in
+        allFiltersArray = sort(filterСoefficient: f(), sortedСoefficient: k).filter({ history -> Bool in
             if searchText.isEmpty {return true}
             return history.borrower.lowercased().contains(searchText.lowercased()) ||
                 history.date.lowercased().contains(searchText.lowercased())
@@ -98,22 +100,42 @@ class BookHistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         newConstrain(identifier: "scroll", const: 0)
     }
     
-    func sort(sortedСoefficient: Int)->[History]{
+    func sort(filterСoefficient: Int, sortedСoefficient: Int)->[History]{
         
         var resultArray = [History]()
         
-        if sortedСoefficient == 0{
+        switch filterСoefficient{
+        case 0:
             resultArray = bookHistory
-        }
-        if sortedСoefficient == 1{
+        case 1:
             resultArray = bookHistory.filter({ history -> Bool in
                 history.type == HistoryType.In
             })
-        }
-        if sortedСoefficient == 2{
+        case 2:
             resultArray = bookHistory.filter({ history -> Bool in
                 history.type == HistoryType.Out
             })
+        default: break
+        }
+        
+        switch sortedСoefficient {
+        case 1:
+            resultArray = bookHistory.sorted(by: {
+                $0.borrower < $1.borrower
+            })
+        case 2:
+            resultArray = bookHistory.sorted(by: {
+                $0.borrower > $1.borrower
+            })
+        case 3:
+            resultArray = bookHistory.sorted(by: {
+                getDateFromString(stringDate: $0.date) > getDateFromString(stringDate: $1.date)
+            })
+        case 4:
+            resultArray = bookHistory.sorted(by: {
+                getDateFromString(stringDate: $0.date) < getDateFromString(stringDate: $1.date)
+            })
+        default: break
         }
         
         return resultArray
@@ -124,6 +146,11 @@ class BookHistoryVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             if let destination = segue.destination as? BookInfoVC{
                 destination.book = book
                 destination.library = library
+            }
+            if let destination = segue.destination as? BookSortVC{
+                destination.library = library
+                destination.bookHistory = bookHistory
+                destination.book = book
             }
         }
     

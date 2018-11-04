@@ -29,6 +29,12 @@ func gen()->String{
     return UUID().uuidString
 }
 
+func getDateFromString(stringDate: String)->Date{
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "dd.MM.yyyy"
+    return dateFormatter.date(from: stringDate)!
+}
+
 func strDate()->String{
     let date = Date()
     let formatter = DateFormatter()
@@ -92,24 +98,56 @@ class Book:Hashable{
 }
 
 class Library{
-    var allBooks = [Book]()
+    //var allBooks = [Book]()
     
-    func sort(sortedСoefficient: Int)->[Book]{
+    var allBooks = Set<Book>()
+    
+    func sort(filterСoefficient: Int, sortedСoefficient: Int)->[Book]{
         
         var resultArray = [Book]()
         
-        if sortedСoefficient == 0{
-            resultArray = allBooks
-        }
-        if sortedСoefficient == 1{
+        switch filterСoefficient{
+        case 0:
+            for book in allBooks{
+                resultArray.append(book)
+            }
+        case 1:
             resultArray = allBooks.filter({ book -> Bool in
                 book.isRented == false
             })
-        }
-        if sortedСoefficient == 2{
+        case 2:
             resultArray = allBooks.filter({ book -> Bool in
                 book.isRented == true
             })
+        default: break
+        }
+        
+        switch sortedСoefficient {
+        case 1:
+            resultArray = resultArray.sorted(by: {
+                $0.bookName < $1.bookName
+            })
+        case 2:
+            resultArray = resultArray.sorted(by: {
+                $0.bookName > $1.bookName
+            })
+        case 3:
+            resultArray = resultArray.sorted(by: {
+                $0.authorName < $1.authorName
+            })
+        case 4:
+            resultArray = resultArray.sorted(by: {
+                $0.authorName > $1.authorName
+            })
+        case 5:
+            resultArray = resultArray.sorted(by: {
+                getDateFromString(stringDate: $0.dateOfPublishing) > getDateFromString(stringDate: $1.dateOfPublishing)
+            })
+        case 6:
+            resultArray = resultArray.sorted(by: {
+                getDateFromString(stringDate: $0.dateOfPublishing) < getDateFromString(stringDate: $1.dateOfPublishing)
+            })
+        default: break
         }
         
         return resultArray
@@ -117,22 +155,14 @@ class Library{
     }
     
     func addBook(book: Book){
-        allBooks.append(book)
+        allBooks.insert(book)
     }
     
     func removeBook(book: Book){
-        var bookIndex = Int()
-        for i in 0 ..< allBooks.count{
-            if allBooks[i].UUID == book.UUID{
-                bookIndex = i
+        for bookInArray in allBooks{
+            if bookInArray == book{
+                allBooks.remove(book)
             }
-        }
-        print("-------------------")
-        print(allBooks[bookIndex].bookName)
-        print("-------------------")
-        allBooks.remove(at: bookIndex)
-        for i in 0 ..< allBooks.count{
-            print(allBooks[i].bookName)
         }
     }
     

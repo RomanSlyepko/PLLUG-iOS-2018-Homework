@@ -15,6 +15,7 @@ class BookInfoVC: UIViewController {
     var library = Library()
     var book = Book()
     var bookHistory = [History]()
+    var k = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,7 @@ class BookInfoVC: UIViewController {
         }
         if let destination = segue.destination as? BookListVC{
             destination.library = library
+            destination.k = k
         }
         if let destination = segue.destination as? BookActionVC{
             destination.book = book

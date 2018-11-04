@@ -17,15 +17,11 @@ class StartVC: UIViewController {
         
         library.gen()
         
-        for i in 0 ..< library.allBooks.count{
-            for j in 0 ..< 100 {
-                library.rentBook(book: library.allBooks[i], borrower: "Reader\(j)")
-                library.returnBook(book: library.allBooks[i])
+        for book in library.allBooks{
+            for i in 0 ..< 100 {
+                library.rentBook(book: book, borrower: "Reader\(i)")
+                library.returnBook(book: book)
             }
-        }
-        
-        for i in 0...4{
-            library.allBooks[i].isRented = true
         }
         
     }

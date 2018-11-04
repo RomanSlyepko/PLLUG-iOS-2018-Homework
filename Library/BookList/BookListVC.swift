@@ -16,6 +16,7 @@ class BookListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     var library = Library()
     var allFiltersArray = [Book]()
+    var k = Int()
     
     var selectedBook = Book()
     
@@ -32,11 +33,11 @@ class BookListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         table.dataSource = self
         searchBar.delegate = self
         
-        allFiltersArray = library.sort(sortedСoefficient: k())
+        allFiltersArray = library.sort(filterСoefficient: f(), sortedСoefficient: k)
         
     }
     
-    func k()->Int{
+    func f()->Int{
         return segment!.selectedSegmentIndex
     }
     
@@ -66,7 +67,7 @@ class BookListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         let book = allFiltersArray[indexPath.row]
         
         cell.textLabel?.text = "\(book.bookName)\n"
-        if book.type == Type.Magazine || book.type == Type.NewsPaper{
+        if (book.type == Type.Magazine || book.type == Type.NewsPaper || k > 4) && (k != 3 && k != 4) {
             cell.detailTextLabel?.text = "Publishing: \(book.dateOfPublishing)"
         }else{
             cell.detailTextLabel?.text = "by \(book.authorName)"
@@ -82,7 +83,7 @@ class BookListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let book = library.allBooks[indexPath.row]
+            let book = allFiltersArray[indexPath.row]
             library.removeBook(book: book)
             deleteItemFromFilterArray(book: book)
         }
@@ -92,13 +93,13 @@ class BookListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     @IBAction func segmentTap(_ sender: Any) {
         UIView .performWithoutAnimation {
             table.isHidden = false
-            allFiltersArray = library.sort(sortedСoefficient: k())
+            allFiltersArray = library.sort(filterСoefficient: f(), sortedСoefficient: k)
             table.reloadData()
         }
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        allFiltersArray = library.sort(sortedСoefficient: k()).filter({ book -> Bool in
+        allFiltersArray = library.sort(filterСoefficient: f(), sortedСoefficient: k).filter({ book -> Bool in
             if searchText.isEmpty {return true}
             return book.bookName.lowercased().contains(searchText.lowercased()) ||
                 book.authorName.lowercased().contains(searchText.lowercased()) ||
@@ -131,9 +132,14 @@ class BookListVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         if let destination = segue.destination as? BookInfoVC{
             destination.book = selectedBook
             destination.library = library
+            destination.k = k
         }
         if let destination = segue.destination as? AddBookVC{
             destination.library = library
+        }
+        if let destination = segue.destination as? BookSortVC{
+            destination.library = library
+            destination.who = "L"
         }
     }
     

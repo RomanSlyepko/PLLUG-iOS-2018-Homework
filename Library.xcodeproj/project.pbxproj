@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A414ADCC218EA18000411184 /* BookSortVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A414ADCB218EA18000411184 /* BookSortVC.swift */; };
 		A4ED385E2188D49700508ABD /* BookInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ED385D2188D49700508ABD /* BookInfoVC.swift */; };
 		A4ED38602188D7FE00508ABD /* BookInfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ED385F2188D7FE00508ABD /* BookInfoTVC.swift */; };
 		A4ED3862218901E200508ABD /* BookHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ED3861218901E200508ABD /* BookHistoryVC.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A414ADCB218EA18000411184 /* BookSortVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSortVC.swift; sourceTree = "<group>"; };
 		A4ED385D2188D49700508ABD /* BookInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoVC.swift; sourceTree = "<group>"; };
 		A4ED385F2188D7FE00508ABD /* BookInfoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoTVC.swift; sourceTree = "<group>"; };
 		A4ED3861218901E200508ABD /* BookHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookHistoryVC.swift; sourceTree = "<group>"; };
@@ -53,6 +55,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A414ADC6218E967B00411184 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A414ADCB218EA18000411184 /* BookSortVC.swift */,
+				A4F2706A21880FB700E30653 /* Extensions.swift */,
+				A4F27064218777AD00E30653 /* LibraryClass.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A414ADC8218E96B300411184 /* BookList */ = {
+			isa = PBXGroup;
+			children = (
+				A4ED386321892EF900508ABD /* StartVC.swift */,
+				A4F270682187DC5300E30653 /* BookListVC.swift */,
+			);
+			path = BookList;
+			sourceTree = "<group>";
+		};
+		A414ADC9218E96E100411184 /* BookInfo */ = {
+			isa = PBXGroup;
+			children = (
+				A4ED385D2188D49700508ABD /* BookInfoVC.swift */,
+				A4ED385F2188D7FE00508ABD /* BookInfoTVC.swift */,
+				A4ED3861218901E200508ABD /* BookHistoryVC.swift */,
+			);
+			path = BookInfo;
+			sourceTree = "<group>";
+		};
+		A414ADCA218E96FC00411184 /* BookActions */ = {
+			isa = PBXGroup;
+			children = (
+				A4ED386521893F0D00508ABD /* BookActionVC.swift */,
+				A4ED38672189527C00508ABD /* AddBookVC.swift */,
+				A4ED38692189529500508ABD /* AddBookTVC.swift */,
+			);
+			path = BookActions;
+			sourceTree = "<group>";
+		};
 		A4F2704621875D6A00E30653 = {
 			isa = PBXGroup;
 			children = (
@@ -73,16 +114,10 @@
 			isa = PBXGroup;
 			children = (
 				A4F2705221875D6A00E30653 /* AppDelegate.swift */,
-				A4F2706A21880FB700E30653 /* Extensions.swift */,
-				A4F27064218777AD00E30653 /* LibraryClass.swift */,
-				A4ED386321892EF900508ABD /* StartVC.swift */,
-				A4F270682187DC5300E30653 /* BookListVC.swift */,
-				A4ED385D2188D49700508ABD /* BookInfoVC.swift */,
-				A4ED385F2188D7FE00508ABD /* BookInfoTVC.swift */,
-				A4ED3861218901E200508ABD /* BookHistoryVC.swift */,
-				A4ED386521893F0D00508ABD /* BookActionVC.swift */,
-				A4ED38672189527C00508ABD /* AddBookVC.swift */,
-				A4ED38692189529500508ABD /* AddBookTVC.swift */,
+				A414ADC6218E967B00411184 /* Model */,
+				A414ADC8218E96B300411184 /* BookList */,
+				A414ADC9218E96E100411184 /* BookInfo */,
+				A414ADCA218E96FC00411184 /* BookActions */,
 				A4F2705621875D6A00E30653 /* Main.storyboard */,
 				A4F2705921875D6B00E30653 /* Assets.xcassets */,
 				A4F2705B21875D6B00E30653 /* LaunchScreen.storyboard */,
@@ -169,6 +204,7 @@
 				A4F270692187DC5300E30653 /* BookListVC.swift in Sources */,
 				A4F2706B21880FB700E30653 /* Extensions.swift in Sources */,
 				A4ED38602188D7FE00508ABD /* BookInfoTVC.swift in Sources */,
+				A414ADCC218EA18000411184 /* BookSortVC.swift in Sources */,
 				A4ED385E2188D49700508ABD /* BookInfoVC.swift in Sources */,
 				A4ED386421892EF900508ABD /* StartVC.swift in Sources */,
 				A4ED386A2189529500508ABD /* AddBookTVC.swift in Sources */,

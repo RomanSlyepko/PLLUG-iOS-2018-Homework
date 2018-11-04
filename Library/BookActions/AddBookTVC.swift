@@ -37,10 +37,16 @@ class AddBookTVC: UITableViewController, UITextFieldDelegate, UIPickerViewDataSo
         datePicker.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
         bookNameTF.addTarget(self, action: #selector(bookNameDidChange(_:)), for: .editingChanged)
         authorNameTF.addTarget(self, action: #selector(authorNameDidChange(_:)), for: .editingChanged)
+        bookNameTF.becomeFirstResponder()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+        textField.resignFirstResponder()
+        if(textField == self.bookNameTF){
+            authorNameTF.becomeFirstResponder()
+        }else{
+            self.view.endEditing(true)
+        }
         return true
     }
     

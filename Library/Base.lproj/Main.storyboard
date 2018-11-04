@@ -557,7 +557,7 @@
                                 </constraints>
                                 <state key="normal" image="Sort"/>
                                 <connections>
-                                    <segue destination="hm8-kN-d8R" kind="show" id="CAx-sX-6W4"/>
+                                    <segue destination="hm8-kN-d8R" kind="show" id="2Eb-4W-HYK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -600,10 +600,10 @@
             </objects>
             <point key="canvasLocation" x="772" y="-269"/>
         </scene>
-        <!--View Controller-->
+        <!--Book SortVC-->
         <scene sceneID="M36-ep-8MA">
             <objects>
-                <viewController id="hm8-kN-d8R" sceneMemberID="viewController">
+                <viewController id="hm8-kN-d8R" customClass="BookSortVC" customModule="Library" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zPI-C9-MCM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -639,6 +639,9 @@
                                 <state key="normal" image="Cancel">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancel:" destination="hm8-kN-d8R" eventType="touchUpInside" id="bA7-Xj-caK"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJl-as-TLp">
                                 <rect key="frame" x="0.0" y="235.5" width="375" height="216"/>
@@ -654,6 +657,7 @@
                                 </state>
                                 <connections>
                                     <action selector="done:" destination="7Tg-aT-J9Y" eventType="touchUpInside" id="9pe-en-vxs"/>
+                                    <action selector="done:" destination="hm8-kN-d8R" eventType="touchUpInside" id="gix-uV-4Px"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -673,6 +677,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dif-tZ-6KX"/>
                     </view>
+                    <connections>
+                        <outlet property="picker" destination="FJl-as-TLp" id="6iZ-VN-UVF"/>
+                        <segue destination="y0d-q2-WyK" kind="show" identifier="List" id="WKu-uA-7bd"/>
+                        <segue destination="xMU-yJ-R1W" kind="show" identifier="History" id="tAO-Di-2jf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BVQ-4O-kEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -732,7 +741,7 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxb-BN-vus">
                                 <rect key="frame" x="0.0" y="90" width="375" height="19.5"/>
@@ -1114,9 +1123,9 @@
         <image name="Sort" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BGi-CR-ZY5"/>
-        <segue reference="R16-a0-NgU"/>
-        <segue reference="KlX-Gq-OLD"/>
-        <segue reference="mOm-v3-7oi"/>
+        <segue reference="2Eb-4W-HYK"/>
+        <segue reference="tAO-Di-2jf"/>
+        <segue reference="kFJ-4f-UCH"/>
+        <segue reference="WKu-uA-7bd"/>
     </inferredMetricsTieBreakers>
 </document>

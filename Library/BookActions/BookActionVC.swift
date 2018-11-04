@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BookActionVC: UIViewController {
+class BookActionVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var finishView: UIView!
     @IBOutlet weak var borrowerTextField: UITextField!
@@ -29,6 +29,8 @@ class BookActionVC: UIViewController {
             titleLabel.text = "Return"
             titleImage.image = #imageLiteral(resourceName: "Back")
         }else{
+            borrowerTextField.delegate = self
+            borrowerTextField.becomeFirstResponder()
             issueDateLabel.isHidden = true
             titleLabel.text = "Issue"
             titleImage.image = #imageLiteral(resourceName: "Issue")
@@ -40,6 +42,11 @@ class BookActionVC: UIViewController {
         
         setup()
         
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
     
     func showDone(){
@@ -61,6 +68,7 @@ class BookActionVC: UIViewController {
             showDone()
         }else{
             if borrowerTextField.text?.isEmpty == false {
+                self.view.endEditing(true)
                 let borrower = borrowerTextField.text!
                 library.rentBook(book: book, borrower: borrower)
                 showDone()

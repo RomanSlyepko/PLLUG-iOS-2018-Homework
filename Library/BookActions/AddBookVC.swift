@@ -60,6 +60,7 @@ class AddBookVC: UIViewController {
                         alert(title: "Choose type of book", message: "Type of book isn't selected", button: "Try Again", action: nil)
                     }else{
                             library.addBook(book: newBook)
+                            self.view.endEditing(true)
                             showDone()
                     }
                 }
