@@ -166,14 +166,10 @@ class libraryController {
         }
     }
     
-    private func checkBookAvailable(book: Book) -> Bool {
-        return library.availableBooks.firstIndex(where: {$0.uId == book.uId}) == nil
-    }
-    
     func printBookInUsers() {
         print("All books in users:")
         for index in library.libraryHistoy {
-            if checkBookAvailable(book: index.book),  index.userName == index.book.currentUser {
+            if index.userName == index.book.currentUser {
                 let timeDifferent = dateInfo.timeDifferenceBetweenNowAnd(time: index.time)
                 print("\(index.book.bookName) in \(index.userName!) from \(index.time). He (she) take it \(timeDifferent) seconds ago")
             }
@@ -184,7 +180,7 @@ class libraryController {
     func printBookInUsersByType(type: BookType) {
         print("\(type.rawValue) books in users:")
         for index in library.libraryHistoy {
-            if checkBookAvailable(book: index.book), index.book.bookType == type, index.userName == index.book.currentUser {
+            if index.book.bookType == type, index.userName == index.book.currentUser {
                 let timeDifferent = dateInfo.timeDifferenceBetweenNowAnd(time: index.time)
                 print("\(index.book.bookName) in \(index.userName!) from \(index.time). He (she) take it \(timeDifferent) seconds ago")
             }
