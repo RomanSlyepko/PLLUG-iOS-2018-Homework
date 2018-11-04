@@ -95,7 +95,11 @@ class Library {
     }
     
     
-    func addBook(book: Book) {
+    func addBook(book: Book) throws {
+        guard booksInLibrary.firstIndex(where: {$0.bookName == book.bookName}) == nil else {
+            throw Failure(message: "We already have this book in our library")
+        }
+        
         print("NEW! We haw the new book in library: \"\(book.bookName)\" by \(book.bookAuthor)\n")
         booksInLibrary.append(book)
         availableBooks.append(book)
@@ -118,21 +122,15 @@ class Library {
     
     func takeBookFromUser(book: Book, userName: String) throws {
         print("Hello, it's me, \(userName), I come to give back your book \"\(book.bookName)\"")
-        
-        guard availableBooks.lastIndex(where: { (bookInUser) -> Bool in
-            return bookInUser.uId != book.uId
-        }) != nil else {
-            throw Failure(message: "\(userName), we can not take this books\n")
+
+        guard userName == book.currentUser else {
+            throw Failure(message: "We can not take this book from you\n")
         }
         
-        if userName == book.currentUser {
-            print("Hello \(userName), thanks\n")
-            libraryHistoy.append(Library.LibHistory.init(userName: userName, book: book, time: dateInfo.getCurrentTime(), action: .giveBackBookFromLibrary))
-            availableBooks.append(book)
-            book.currentUser = nil
-        } else {
-            print("We can not take this book from you\n")
-        }
+        print("Hello \(userName), thanks\n")
+        libraryHistoy.append(Library.LibHistory.init(userName: userName, book: book, time: dateInfo.getCurrentTime(), action: .giveBackBookFromLibrary))
+        availableBooks.append(book)
+        book.currentUser = nil
     }
     
     
@@ -143,6 +141,14 @@ var library = Library()
 // MARK: - Library controller
 
 class libraryController {
+    
+    func addBookToLibrary(book: Book) {
+        do {
+            try library.addBook(book: book)
+        } catch (let error) {
+            print("\(error)\n")
+        }
+    }
     
     func userTakeBookFromLibrary(book: Book, userName: String) {
         do {
@@ -161,14 +167,7 @@ class libraryController {
     }
     
     private func checkBookAvailable(book: Book) -> Bool {
-        var isAviable = true
-        for index in library.availableBooks {
-            if book.uId == index.uId {
-                isAviable = false
-                break
-            }
-        }
-        return isAviable
+        return library.availableBooks.firstIndex(where: {$0.uId == book.uId}) == nil
     }
     
     func printBookInUsers() {
@@ -232,12 +231,14 @@ class libraryController {
 
 let libController = libraryController()
 
+
 // MARK: - Test
 
-// *** TEST ***
 
 // Add new book to library
-library.addBook(book: book5)
+libController.addBookToLibrary(book: book5)
+// Add an existing book to the library
+libController.addBookToLibrary(book: book5)
 
 // User take the book from the library:
 libController.userTakeBookFromLibrary(book: book1, userName: "Alex")
@@ -262,7 +263,6 @@ libController.userGiveBackBookToLibrary(book: book6, userName: "John")
 libController.printLibHistory()
 // Move history for book (book1):
 libController.printMoveHistoryForBook(book: book1)
-
 
 // All avilable books:
 print("All available books:")
