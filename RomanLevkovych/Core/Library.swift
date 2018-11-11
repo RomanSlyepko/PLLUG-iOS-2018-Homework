@@ -13,7 +13,7 @@ class Library {
     // MARK: - properties
     let name: String
     private(set) var fond: Set<Book>
-    private var history =  [Book: [History]]()
+    private var history = [Book: [History]]()
     
     struct History {
         let date: Date
@@ -23,7 +23,6 @@ class Library {
     init(name: String, books: Book...) {
         self.name = name
         self.fond = Set<Book>(books)
-        self.history = [Book : [History]]()
         for book in self.fond {
             history[book] = [History(date: Date(), owner: self.name)]
         }
@@ -57,15 +56,26 @@ class Library {
         return self.fond.filter(expr)
     }
     
+    func getAll() -> [Book] {
+        return Array(self.fond)
+    }
+    
     func available() -> [Book] {
         return self.history.reduce([], { part, value -> [Book] in
             return part + ((value.value.last?.owner == self.name) ? [value.key] : [])
         })
     }
     
-    func taken() -> [Book] {
-        return self.history.reduce([], { part, value -> [Book] in
-            return part + ((value.value.last?.owner != self.name) ? [value.key] : [])
-        })
+    func taken() -> [(Book, String)] {
+        return self.history.reduce([]) { (acc, data) -> [(Book, String?)?] in
+                guard let lastHistoryEntity = data.value.last else { return acc }
+            
+                let date = Date()
+                let interval = date.timeIntervalSince(lastHistoryEntity.date)
+                let format = DateComponentsFormatter()
+                format.allowedUnits = [.day, .hour, .minute, .second]
+            
+                return  acc + [( lastHistoryEntity.owner != self.name ? (data.key, format.string(from: interval)) : nil )]
+            }.compactMap { $0 as? (Book, String) }
     }
 }

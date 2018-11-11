@@ -24,5 +24,5 @@ enum Genres: String, Codable {
     case YoungAdultFiction
     case ActionThriller
     case Education
-    case empty
+    case Undefined
 }

@@ -12,5 +12,5 @@ enum Literature: String, Codable {
     case Book
     case Magazine
     case Newspaper
-    case Empty
+    case Undefined
 }
