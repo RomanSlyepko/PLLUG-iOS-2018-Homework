@@ -81,6 +81,10 @@ class Library {
     var availableBooks = [book1, book2, book3, book4]
     var libraryHistoy = [LibHistory]()
     
+    var newBookNotifier: ((Book) -> ())?
+    var takeBookNotifier: ((Book) -> ())?
+    var giveBackBookNotifier: ((Book) -> ())?
+    
     struct LibHistory {
         var userName: String?
         var book: Book
@@ -103,6 +107,7 @@ class Library {
         print("NEW! We haw the new book in library: \"\(book.bookName)\" by \(book.bookAuthor)\n")
         booksInLibrary.append(book)
         availableBooks.append(book)
+        newBookNotifier?(book)
     }
     
     func giveBookForUser(book: Book, userName: String) throws {
@@ -118,6 +123,7 @@ class Library {
         print("Take your book \(userName)\n")
         availableBooks.remove(at: index)
         book.currentUser = userName
+        takeBookNotifier?(book)
     }
     
     func takeBookFromUser(book: Book, userName: String) throws {
@@ -126,8 +132,8 @@ class Library {
         guard userName == book.currentUser else {
             throw Failure(message: "We can not take this book from you\n")
         }
-        
         print("Hello \(userName), thanks\n")
+        giveBackBookNotifier?(book)
         libraryHistoy.append(Library.LibHistory.init(userName: userName, book: book, time: dateInfo.getCurrentTime(), action: .giveBackBookFromLibrary))
         availableBooks.append(book)
         book.currentUser = nil
@@ -137,6 +143,23 @@ class Library {
 }
 
 var library = Library()
+
+// MARK: - Observer message
+
+library.newBookNotifier = {(book) in
+    print("OBSEVER. NEW BOOK: New book in libary \"\(book.bookName)\" by \(book.bookAuthor) !!!")
+    print()
+}
+
+library.takeBookNotifier = {(book) in
+    print("OBSERVER. TAKEN BOOK: \(book.currentUser!) take book \"\(book.bookName) by \(book.bookAuthor)\"")
+    print()
+}
+
+library.giveBackBookNotifier = {(book) in
+    print("OBSERVER. GIVE BACK BOOK: \(book.currentUser ?? "User") give back book \"\(book.bookName)\" by \(book.bookAuthor)\"")
+    print()
+}
 
 // MARK: - Library controller
 
