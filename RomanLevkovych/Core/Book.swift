@@ -40,6 +40,6 @@ extension Book: Hashable {
     }
     
     static func !=(lhs: Book, rhs: Book) -> Bool {
-        return lhs == rhs
+        return !(lhs == rhs)
     }
 }
