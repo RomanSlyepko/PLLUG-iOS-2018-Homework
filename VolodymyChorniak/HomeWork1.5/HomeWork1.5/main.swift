@@ -39,7 +39,7 @@ class DateInfo {
         formatter.dateFormat = "HH:mm:ss"
         let date = Date()
         let dateStr = formatter.string(from: date)
-
+        
         return dateStr
     }
     
@@ -81,9 +81,13 @@ class Library {
     var availableBooks = [book1, book2, book3, book4]
     var libraryHistoy = [LibHistory]()
     
-    var newBookNotifier: ((Book) -> ())?
-    var takeBookNotifier: ((Book) -> ())?
-    var giveBackBookNotifier: ((Book) -> ())?
+    var notifierLib: [((Book, ActionType) -> ())] = []
+    
+    func notifyAll(book: Book, action: ActionType) {
+        for notifier in notifierLib {
+            notifier(book, action)
+        }
+    }
     
     struct LibHistory {
         var userName: String?
@@ -107,7 +111,7 @@ class Library {
         print("NEW! We haw the new book in library: \"\(book.bookName)\" by \(book.bookAuthor)\n")
         booksInLibrary.append(book)
         availableBooks.append(book)
-        newBookNotifier?(book)
+        notifyAll(book: book, action: .addNewBook)
     }
     
     func giveBookForUser(book: Book, userName: String) throws {
@@ -123,17 +127,17 @@ class Library {
         print("Take your book \(userName)\n")
         availableBooks.remove(at: index)
         book.currentUser = userName
-        takeBookNotifier?(book)
+        notifyAll(book: book, action: .takeBookFromLibrary)
     }
     
     func takeBookFromUser(book: Book, userName: String) throws {
         print("Hello, it's me, \(userName), I come to give back your book \"\(book.bookName)\"")
-
+        
         guard userName == book.currentUser else {
-            throw Failure(message: "We can not take this book from you\n")
+            throw Failure(message: "We can not take this book from you")
         }
         print("Hello \(userName), thanks\n")
-        giveBackBookNotifier?(book)
+        notifyAll(book: book, action: .giveBackBookFromLibrary)
         libraryHistoy.append(Library.LibHistory.init(userName: userName, book: book, time: dateInfo.getCurrentTime(), action: .giveBackBookFromLibrary))
         availableBooks.append(book)
         book.currentUser = nil
@@ -144,22 +148,6 @@ class Library {
 
 var library = Library()
 
-// MARK: - Observer message
-
-library.newBookNotifier = {(book) in
-    print("OBSEVER. NEW BOOK: New book in libary \"\(book.bookName)\" by \(book.bookAuthor) !!!")
-    print()
-}
-
-library.takeBookNotifier = {(book) in
-    print("OBSERVER. TAKEN BOOK: \(book.currentUser!) take book \"\(book.bookName) by \(book.bookAuthor)\"")
-    print()
-}
-
-library.giveBackBookNotifier = {(book) in
-    print("OBSERVER. GIVE BACK BOOK: \(book.currentUser ?? "User") give back book \"\(book.bookName)\" by \(book.bookAuthor)\"")
-    print()
-}
 
 // MARK: - Library controller
 
@@ -252,6 +240,23 @@ let libController = libraryController()
 
 
 // MARK: - Test
+
+// MARK: - Observer message
+
+// Subscribe on all notifications
+library.notifierLib.append { (book, actionType) in
+    print("OBSERVER1.:\(book.currentUser ?? "") \(actionType.rawValue) \"\(book.bookName) by \(book.bookAuthor)\"")
+    print()
+}
+
+// Subscribe on selected notifications
+library.notifierLib.append { (book, actionType) in
+    if actionType == .addNewBook {
+        print("OBSERVER2.:\(book.currentUser ?? "") \(actionType.rawValue) \"\(book.bookName) by \(book.bookAuthor)\"")
+        print()
+    }
+}
+
 
 
 // Add new book to library
