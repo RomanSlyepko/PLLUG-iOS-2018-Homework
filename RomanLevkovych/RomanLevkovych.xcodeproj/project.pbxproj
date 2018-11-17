@@ -14,6 +14,7 @@
 		30B8518F2191D45100C56CAE /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B8518A2191D45100C56CAE /* Errors.swift */; };
 		30B851902191D45100C56CAE /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B8518B2191D45100C56CAE /* Library.swift */; };
 		30DE3733219B165100A67BA8 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DE3732219B165100A67BA8 /* Observer.swift */; };
+		30E01E5B21A06FE80040D57E /* LibraryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E01E5A21A06FE80040D57E /* LibraryDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,7 @@
 		30B8518A2191D45100C56CAE /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		30B8518B2191D45100C56CAE /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		30DE3732219B165100A67BA8 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		30E01E5A21A06FE80040D57E /* LibraryDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			children = (
 				30B851882191D45100C56CAE /* Literature.swift */,
 				30B851872191D45100C56CAE /* Book.swift */,
+				30E01E5A21A06FE80040D57E /* LibraryDelegate.swift */,
 				30B8518B2191D45100C56CAE /* Library.swift */,
 				30DE3732219B165100A67BA8 /* Observer.swift */,
 				30B851892191D45100C56CAE /* Genres.swift */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30E01E5B21A06FE80040D57E /* LibraryDelegate.swift in Sources */,
 				30B8518C2191D45100C56CAE /* Book.swift in Sources */,
 				30B8518D2191D45100C56CAE /* Literature.swift in Sources */,
 				30B8518E2191D45100C56CAE /* Genres.swift in Sources */,

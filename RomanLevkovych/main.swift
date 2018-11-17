@@ -16,17 +16,23 @@ struct Obs: Observer {
     func update(action: Actions) {
         print(String(describing: book) + " " + action.rawValue)
     }
-    
-    
 }
 
+class LibDel: LibraryDelegate {
+    let id: Int
+    init(id: Int) {
+        self.id = id
+    }
+}
+
+let ld = LibDel(id: 0)
 let book0 =  Book(id: 0, name: "Swift", author: "Apple", publisher: "O'Reilly", genre: .Education, type: .Book)
 let book1 = Book(id: 1, name: "name1", author: "author1", publisher: "publisher1", genre: .Action, type: .Book)
 let book2 = Book(id: 2, name: "name2", author: "author3", publisher: "publisher1", genre: .Horror, type: .Magazine)
 let book3 = Book(id: 3, name: "JS", author: "Apple", publisher: "O'Reilly", genre: .Education, type: .Newspaper)
 
 let lib = Library(name: "Library", books: book0, book1, book2, book3)
-
+lib.libDelegate = ld
 let obs = Obs(id: 0, book: book1)
 let obs1 = Obs(id: 1, book: book2)
 lib.attach(observer: obs)

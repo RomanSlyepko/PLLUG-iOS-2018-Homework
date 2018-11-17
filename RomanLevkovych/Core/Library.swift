@@ -15,6 +15,7 @@ class Library {
     private(set) var fond: Set<Book>
     private var history = [Book: [History]]()
     private var observers = [Observer]()
+    weak var libDelegate: LibraryDelegate?
     
     func attach(observer: Observer) {
         self.observers.append(observer)
@@ -53,6 +54,7 @@ class Library {
         self.fond.insert(book)
         self.history[book] = [History(date: Date(), owner: self.name)]
         notify(book: book, action: .added)
+        self.libDelegate?.bookDidAdded(book: book)
     }
     
     func take(book: Book, to owner: String) throws {
@@ -60,6 +62,7 @@ class Library {
             print("Operation successfull\n")
             self.history[book]?.append(Library.History(date: Date(), owner: owner))
             notify(book: book, action: .taken)
+            self.libDelegate?.bookDidTaken(book: book)
         } else {
             throw LibraryErrors.BookIsTaken
         }
@@ -69,6 +72,7 @@ class Library {
         if self.fond.contains(book) && self.history[book]?.last?.owner != self.name {
             self.history[book]?.append(Library.History(date: Date(), owner: self.name))
             notify(book: book, action: .gotBack)
+            self.libDelegate?.bookDidGetBack(book: book)
         } else {
             throw LibraryErrors.BookHaveReturned
         }
