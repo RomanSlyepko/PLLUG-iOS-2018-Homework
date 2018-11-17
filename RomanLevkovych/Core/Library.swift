@@ -14,6 +14,22 @@ class Library {
     let name: String
     private(set) var fond: Set<Book>
     private var history = [Book: [History]]()
+    private var observers = [Observer]()
+    
+    func attach(observer: Observer) {
+        self.observers.append(observer)
+    }
+    
+    func detach(observer: Observer) {
+        self.observers.removeAll { $0.id == observer.id }
+    }
+    
+    
+    
+    private func notify(book: Book, action: Actions) {
+        self.observers.filter { $0.book.id == book.id }
+            .forEach {$0.update(action: action) }
+    }
     
     struct History {
         let date: Date
@@ -28,17 +44,22 @@ class Library {
         }
     }
     
+    
+    
     func add(book: Book) throws {
         if self.fond.contains(book) {
             throw LibraryErrors.BookIsInLibrary
         }
         self.fond.insert(book)
         self.history[book] = [History(date: Date(), owner: self.name)]
+        notify(book: book, action: .added)
     }
     
     func take(book: Book, to owner: String) throws {
         if self.fond.contains(book) && self.history[book]?.last?.owner == self.name {
+            print("Operation successfull\n")
             self.history[book]?.append(Library.History(date: Date(), owner: owner))
+            notify(book: book, action: .taken)
         } else {
             throw LibraryErrors.BookIsTaken
         }
@@ -47,6 +68,7 @@ class Library {
     func getBack(book: Book) throws {
         if self.fond.contains(book) && self.history[book]?.last?.owner != self.name {
             self.history[book]?.append(Library.History(date: Date(), owner: self.name))
+            notify(book: book, action: .gotBack)
         } else {
             throw LibraryErrors.BookHaveReturned
         }
