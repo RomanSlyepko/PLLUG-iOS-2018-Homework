@@ -23,7 +23,7 @@ class ViewController: UIViewController {
             print("Error 2: \(error.localizedDescription)")
         }
         
-        dataManager.getCurrentWeather(forCity: "Vilnius", completion: { (result) in
+        dataManager.getCurrentWeather(withLat: "-22.906847", andLong: "-43.172897", completion: { (result) in
             print(result)
             print()
         }) { (error) in

@@ -10,35 +10,24 @@ import Foundation
 import Alamofire
 
 // -------------------------------------
+// MARK: - DemoNetworkError
+// -------------------------------------
+enum DemoNetworkError: Error {
+    
+    case wrongUrlFormat
+    case serverError(Error)
+    case unknown
+}
+
+// -------------------------------------
 // MARK: - DemoNetworkResult
 // -------------------------------------
-
-
-enum ResultType {
-    case ultravioletSuccess(Ultraviolet)
-    case currentWeatherSuccess(CurrentWeather)
-    case futureWeatherSuccess(FutureWeather)
-    case failure(Error)
-}
-
-
-enum UltravioletResult {
+enum DemoNetworkResult {
     
-    case success(rates: Ultraviolet)
-    case failure(Error)
+    case success(Data)
+    case failure(DemoNetworkError)
 }
 
-enum CurrentWeatherResult {
-    
-    case success(rates: CurrentWeather)
-    case failure(Error)
-}
-
-enum FutureWeatherResult {
-    
-    case success(rates: FutureWeather)
-    case failure(Error)
-}
 // -------------------------------------
 // MARK: - DemoNetwork
 // -------------------------------------
@@ -47,53 +36,22 @@ final class DemoNetwork {
     private init() {}
     static let shared = DemoNetwork()
     
-    func requestUVData(request: URLRequest, completion: @escaping (UltravioletResult) -> ()) {
-        Alamofire.request(request).validate(statusCode: 200..<300).responseData { result in
-            switch result.result {
+    func requestData(url: String, completion: @escaping (DemoNetworkResult) -> ()) {
+        
+        guard let url = URL(string: url) else {
+            completion(.failure(.wrongUrlFormat))
+            return
+        }
+        var request = URLRequest(url: url)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        Alamofire.request(request).validate(statusCode: 200..<300).responseData {
+            switch $0.result {
             case .success(let data):
-                do {
-                    let result = try JSONDecoder().decode(Ultraviolet.self, from: data)
-                    completion(.success(rates: result))
-                } catch {
-                    completion(.failure(error))
-                }
+                completion(.success(data))
             case .failure(let error):
-                completion(.failure(error))
+                completion(.failure(.serverError(error)))
             }
         }
     }
-    
-    func requestCurrentWeather(request: URLRequest, completion: @escaping (CurrentWeatherResult) -> ()) {
-        Alamofire.request(request).validate(statusCode: 200..<300).responseData { result in
-            switch result.result {
-            case .success(let data):
-                do {
-                    let result = try JSONDecoder().decode(CurrentWeather.self, from: data)
-                    completion(.success(rates: result))
-                } catch {
-                    completion(.failure(error))
-                }
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
-    
-    
-    func requestFutureWeather(request: URLRequest, completion: @escaping (FutureWeatherResult) -> ()) {
-        Alamofire.request(request).validate(statusCode: 200..<300).responseData { result in
-            switch result.result {
-            case .success(let data):
-                do {
-                    let result = try JSONDecoder().decode(FutureWeather.self, from: data)
-                    completion(.success(rates: result))
-                } catch {
-                    completion(.failure(error))
-                }
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }   
 }
-

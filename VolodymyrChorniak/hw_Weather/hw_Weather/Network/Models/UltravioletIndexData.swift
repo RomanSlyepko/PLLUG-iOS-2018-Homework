@@ -8,13 +8,11 @@
 
 import Foundation
 
-// The data model may vary depending on the city, so I use the optional values
-
 struct Ultraviolet: Codable {
-    let lat, lon: Double?
-    let dateISO: String?
-    let date: Int?
-    let value: Double?
+    let lat, lon: Double
+    let dateISO: String
+    let date: Double
+    let value: Double
     
     enum CodingKeys: String, CodingKey {
         case lat, lon

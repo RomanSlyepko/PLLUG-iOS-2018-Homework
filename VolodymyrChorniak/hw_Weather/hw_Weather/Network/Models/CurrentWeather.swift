@@ -8,25 +8,23 @@
 
 import Foundation
 
-// The data model may vary depending on the city, so I use the optional values
-
 struct CurrentWeather: Codable {
-    let coord: Coord?
-    let weather: [Weather]?
-    let base: String?
-    let main: Main?
-    let wind: Winds?
-    let clouds: Clouds?
+    let coord: Coord
+    let weather: [Weather]
+    let base: String
+    let main: Main
+    let wind: Winds
+    let clouds: Clouds
     let rain: Rains?
-    let dt: Int?
-    let sys: Sys?
-    let id: Int?
-    let name: String?
-    let cod: Int?
+    let dt: Double
+    let sys: Sys
+    let id: Double
+    let name: String
+    let cod: Double
 }
 
 struct Clouds: Codable {
-    let all: Int
+    let all: Double
 }
 
 struct Coord: Codable {
@@ -35,7 +33,7 @@ struct Coord: Codable {
 
 struct Main: Codable {
     let temp: Double
-    let pressure, humidity: Int
+    let pressure, humidity: Double
     let tempMin, tempMax: Double
     
     enum CodingKeys: String, CodingKey {
@@ -46,7 +44,7 @@ struct Main: Codable {
 }
 
 struct Rains: Codable {
-    let the3H: Int
+    let the3H: Double
     
     enum CodingKeys: String, CodingKey {
         case the3H = "3h"
@@ -54,19 +52,19 @@ struct Rains: Codable {
 }
 
 struct Sys: Codable {
-    let type, id: Int
+    let type, id: Double
     let message: Double
     let country: String
-    let sunrise, sunset: Int
+    let sunrise, sunset: Double
 }
 
 struct Weather: Codable {
-    let id: Int
+    let id: Double
     let main, description, icon: String
 }
 
 struct Winds: Codable {
     let speed: Double
-    let deg: Int
+    let deg: Double
 }
 
