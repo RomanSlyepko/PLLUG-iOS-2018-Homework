@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataManager.getUVIndex(withLat: "39.875160", andLong: "20.006639", completion: { (result) in
+        dataManager.getUVIndex(withLat: "54.687157", andLong: "25.279652", completion: { (result) in
             print(result)
             print()
         }) { (error) in
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
             print("Error 3: \(error.localizedDescription)")
         }
         
-        dataManager.getFututeWeather(forCity: "Lviv", completion: { (result) in
+        dataManager.getFututeWeather(forCity: "Sarande", completion: { (result) in
             print(result)
             print()
         }) { (error) in

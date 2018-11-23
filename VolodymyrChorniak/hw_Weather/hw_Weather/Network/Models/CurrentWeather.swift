@@ -9,62 +9,24 @@
 import Foundation
 
 struct CurrentWeather: Codable {
-    let coord: Coord
+    let coordinates: Coord
     let weather: [Weather]
     let base: String
     let main: Main
     let wind: Winds
     let clouds: Clouds
     let rain: Rains?
-    let dt: Double
+    let date: Double
     let sys: Sys
     let id: Double
     let name: String
-    let cod: Double
-}
-
-struct Clouds: Codable {
-    let all: Double
-}
-
-struct Coord: Codable {
-    let lon, lat: Double
-}
-
-struct Main: Codable {
-    let temp: Double
-    let pressure, humidity: Double
-    let tempMin, tempMax: Double
+    let code: Double
     
     enum CodingKeys: String, CodingKey {
-        case temp, pressure, humidity
-        case tempMin = "temp_min"
-        case tempMax = "temp_max"
+        case weather, base, main, wind, clouds, rain, sys, id, name
+        case coordinates = "coord"
+        case date = "dt"
+        case code = "cod"
     }
-}
-
-struct Rains: Codable {
-    let the3H: Double
-    
-    enum CodingKeys: String, CodingKey {
-        case the3H = "3h"
-    }
-}
-
-struct Sys: Codable {
-    let type, id: Double
-    let message: Double
-    let country: String
-    let sunrise, sunset: Double
-}
-
-struct Weather: Codable {
-    let id: Double
-    let main, description, icon: String
-}
-
-struct Winds: Codable {
-    let speed: Double
-    let deg: Double
 }
 

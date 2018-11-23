@@ -14,8 +14,8 @@ let shortApiString = "http://api.openweathermap.org/data/2.5/"
 
 class DataManager {
 
-    func getUVIndex(withLat lat: String, andLong long: String, completion: @escaping (Ultraviolet) -> (), failure: ((_ error: Error) -> Void)?) {
-        let apiString = "\(shortApiString)uvi?appid=\(apiKey)&lat=\(lat)&lon=\(long)"
+    func getUVIndex(withLat latitude: String, andLong longtitude: String, completion: @escaping (Ultraviolet) -> (), failure: ((_ error: Error) -> Void)?) {
+        let apiString = "\(shortApiString)uvi?appid=\(apiKey)&lat=\(latitude)&lon=\(longtitude)"
         DemoNetwork.shared.requestUVData(request: apiString) { result in
             switch result {
             case .success(let result):
@@ -27,8 +27,8 @@ class DataManager {
         }
     }
     
-    func getCurrentWeather(withLat lat: String, andLong lon: String, completion: @escaping (CurrentWeather) -> (), failure: ((_ error: Error) -> Void)?) {
-        let apiString = "\(shortApiString)weather?lat=\(lat)&lon=\(lon)&APPID=\(apiKey)"
+    func getCurrentWeather(withLat latitude: String, andLong longtitude: String, completion: @escaping (CurrentWeather) -> (), failure: ((_ error: Error) -> Void)?) {
+        let apiString = "\(shortApiString)weather?lat=\(latitude)&lon=\(longtitude)&APPID=\(apiKey)"
         DemoNetwork.shared.requestCurrentWeather(request: apiString) { result in
             switch result {
             case .success(let result):
