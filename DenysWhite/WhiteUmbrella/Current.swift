@@ -14,15 +14,3 @@ struct Current: Codable{
     var wind : Wind
     var clouds : Clouds
 }
-struct Weather: Codable {
-    var description : String
-}
-struct Main: Codable {
-    var temp : Double
-}
-struct Wind: Codable {
-    var speed : Double
-}
-struct Clouds: Codable {
-    var all : Int8
-}

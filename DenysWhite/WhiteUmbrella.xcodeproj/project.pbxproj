@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A45C36BF21AE330C00991204 /* Parts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45C36BE21AE330C00991204 /* Parts.swift */; };
 		A4CA85F721A23EC800CFB3EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CA85F621A23EC800CFB3EA /* AppDelegate.swift */; };
 		A4CA85F921A23EC800CFB3EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CA85F821A23EC800CFB3EA /* ViewController.swift */; };
 		A4CA85FC21A23EC800CFB3EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4CA85FA21A23EC800CFB3EA /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A45C36BE21AE330C00991204 /* Parts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parts.swift; sourceTree = "<group>"; };
 		A4CA85F321A23EC800CFB3EA /* WhiteUmbrella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhiteUmbrella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4CA85F621A23EC800CFB3EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4CA85F821A23EC800CFB3EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				A4CA85F621A23EC800CFB3EA /* AppDelegate.swift */,
 				A4CA85F821A23EC800CFB3EA /* ViewController.swift */,
 				A4E7515221ADF97F00637597 /* Current.swift */,
+				A45C36BE21AE330C00991204 /* Parts.swift */,
 				A4E7515421AE0A6700637597 /* Future.swift */,
 				A4E7515721AE0C2900637597 /* UV.swift */,
 				A4D18B3021A3529300AADE35 /* Network */,
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A45C36BF21AE330C00991204 /* Parts.swift in Sources */,
 				A4E7515521AE0A6700637597 /* Future.swift in Sources */,
 				A4CA85F921A23EC800CFB3EA /* ViewController.swift in Sources */,
 				A4E7515321ADF97F00637597 /* Current.swift in Sources */,
