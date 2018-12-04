@@ -1,0 +1,7 @@
+platform :ios, '12.0'
+
+target 'hw_Weather' do
+  use_frameworks!
+
+  pod 'Alamofire'
+end
