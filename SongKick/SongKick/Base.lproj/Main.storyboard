@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search Artist View Controller-->
         <scene sceneID="BUn-zF-uri">
             <objects>
-                <viewController id="W4Y-qf-JxE" sceneMemberID="viewController">
+                <viewController id="W4Y-qf-JxE" customClass="SearchArtistViewController" customModule="SongKick" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gaR-Uf-Tv5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="3024.8000000000002" y="1022.3388305847077"/>
         </scene>
-        <!--View Controller-->
+        <!--Favoutire Artist View Controller-->
         <scene sceneID="rCS-A3-WhC">
             <objects>
-                <viewController id="INi-pd-mtb" sceneMemberID="viewController">
+                <viewController id="INi-pd-mtb" customClass="FavoutireArtistViewController" customModule="SongKick" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="48j-ot-nd9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,6 +56,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DKA-xQ-hpb">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <sections/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,6 +69,9 @@
                         <viewLayoutGuide key="safeArea" id="kEn-Qd-igx"/>
                     </view>
                     <navigationItem key="navigationItem" id="cyd-5E-AkT"/>
+                    <connections>
+                        <outlet property="searchResultTableView" destination="DKA-xQ-hpb" id="MFN-d1-ZVq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Axy-ux-Hsj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
