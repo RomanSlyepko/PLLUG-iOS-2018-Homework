@@ -9,8 +9,14 @@
 import Foundation
 
 enum NetworkErrors: String, Error {
+    case NetworkError = "Error making api request"
     case ResponseError = "Error making api response"
     case DecodingError = "Error decoding api response"
+}
+
+enum NetworkResult {
+    case success([Artist])
+    case error(NetworkErrors)
 }
 
 class Network {
@@ -18,14 +24,17 @@ class Network {
     static let shared = Network()
     private let request = "https://api.songkick.com/api/3.0/search/artists.json?apikey=io09K9l3ebJxmxe2&query="
     
-    func request(for artist: String, onSuccess: @escaping ([Artist]) -> Void, onError: @escaping (NetworkErrors) -> Void) {
+    func request(for artist: String, completion: @escaping (NetworkResult) -> Void) {
         let url = URL(string: request+artist)!
         URLSession.shared.dataTask(with: url) { data, response, error in
+            if error != nil {
+                completion(.error(.NetworkError))
+            }
             guard
                 let data = data
             else {
                 #warning("TODO: set alert in case of error")
-                onError(.ResponseError)
+                completion(.error(.ResponseError))
                 return
             }
             
@@ -35,11 +44,11 @@ class Network {
                 else {
                     print("Error")
 
-                    onError(.DecodingError)
+                    completion(.error(.DecodingError))
                     return
             }
             DispatchQueue.main.async {
-                onSuccess(artists)
+                completion(.success(artists))
             }
         }.resume()
     }
