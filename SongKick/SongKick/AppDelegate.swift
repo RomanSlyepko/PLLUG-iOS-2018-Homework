@@ -16,6 +16,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let url = URL(string: "https://api.songkick.com/api/3.0/search/artists.json?apikey=io09K9l3ebJxmxe2&query=50ceasdfnt")!
+        print(url)
+        URLSession.shared.dataTask(with: url) {
+            data,response,error in
+            
+            print(data ?? 0)
+            guard
+                let data = data
+                else {
+                    print("Error converting data")
+                    return
+            }
+            
+            guard
+                let json = try? JSONDecoder().decode(Response.self, from: data)
+            else {
+                    print("error converting json")
+                    return
+            }
+            print(json)
+        }.resume()
         return true
     }
 

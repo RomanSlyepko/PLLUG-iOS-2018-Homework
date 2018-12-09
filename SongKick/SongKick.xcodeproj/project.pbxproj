@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		301AAA6D21BBE61D00539CDD /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301AAA6C21BBE61D00539CDD /* Response.swift */; };
+		301AAA7121BD1AB100539CDD /* ResultsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301AAA7021BD1AB100539CDD /* ResultsPage.swift */; };
+		301AAA7321BD1AD000539CDD /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301AAA7221BD1AD000539CDD /* Results.swift */; };
+		301AAA7521BD1AE300539CDD /* Artists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301AAA7421BD1AE300539CDD /* Artists.swift */; };
 		30922FAC21B9513600DF619F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30922FAB21B9513600DF619F /* AppDelegate.swift */; };
 		30922FAE21B9513600DF619F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30922FAD21B9513600DF619F /* ViewController.swift */; };
 		30922FB121B9513600DF619F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30922FAF21B9513600DF619F /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		301AAA6C21BBE61D00539CDD /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		301AAA7021BD1AB100539CDD /* ResultsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPage.swift; sourceTree = "<group>"; };
+		301AAA7221BD1AD000539CDD /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		301AAA7421BD1AE300539CDD /* Artists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artists.swift; sourceTree = "<group>"; };
 		30922FA821B9513600DF619F /* SongKick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongKick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30922FAB21B9513600DF619F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30922FAD21B9513600DF619F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +43,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		301AAA7621BD1B8000539CDD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				301AAA6C21BBE61D00539CDD /* Response.swift */,
+				301AAA7421BD1AE300539CDD /* Artists.swift */,
+				301AAA7221BD1AD000539CDD /* Results.swift */,
+				301AAA7021BD1AB100539CDD /* ResultsPage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		30922F9F21B9513600DF619F = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +79,7 @@
 				30922FB221B9513900DF619F /* Assets.xcassets */,
 				30922FB421B9513900DF619F /* LaunchScreen.storyboard */,
 				30922FB721B9513900DF619F /* Info.plist */,
+				301AAA7621BD1B8000539CDD /* Models */,
 			);
 			path = SongKick;
 			sourceTree = "<group>";
@@ -136,7 +156,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				30922FAE21B9513600DF619F /* ViewController.swift in Sources */,
+				301AAA6D21BBE61D00539CDD /* Response.swift in Sources */,
+				301AAA7521BD1AE300539CDD /* Artists.swift in Sources */,
 				30922FAC21B9513600DF619F /* AppDelegate.swift in Sources */,
+				301AAA7121BD1AB100539CDD /* ResultsPage.swift in Sources */,
+				301AAA7321BD1AD000539CDD /* Results.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
