@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Zm-V2-87Q">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,31 +15,41 @@
             <objects>
                 <viewController id="W4Y-qf-JxE" customClass="SearchArtistViewController" customModule="SongKick" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gaR-Uf-Tv5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Search..." translatesAutoresizingMaskIntoConstraints="NO" id="yfM-KU-Obm">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pgD-cP-sCx">
-                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
+                                <rect key="frame" x="0.0" y="129" width="414" height="684"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnE-QM-xPu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" placeholder="Search..." translatesAutoresizingMaskIntoConstraints="NO" id="yfM-KU-Obm">
+                                <rect key="frame" x="0.0" y="73" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="AnE-QM-xPu" firstAttribute="top" secondItem="TWx-IL-NF3" secondAttribute="top" id="2dc-7k-XIS"/>
                             <constraint firstItem="yfM-KU-Obm" firstAttribute="trailing" secondItem="TWx-IL-NF3" secondAttribute="trailing" id="8bW-7f-goK"/>
                             <constraint firstItem="pgD-cP-sCx" firstAttribute="top" secondItem="yfM-KU-Obm" secondAttribute="bottom" id="AJB-yt-6Oa"/>
-                            <constraint firstItem="yfM-KU-Obm" firstAttribute="top" secondItem="TWx-IL-NF3" secondAttribute="top" id="CQI-Om-e0t"/>
                             <constraint firstItem="yfM-KU-Obm" firstAttribute="leading" secondItem="TWx-IL-NF3" secondAttribute="leading" id="G2U-Ye-WyR"/>
+                            <constraint firstItem="AnE-QM-xPu" firstAttribute="leading" secondItem="TWx-IL-NF3" secondAttribute="leading" id="MTJ-dO-Km4"/>
+                            <constraint firstItem="yfM-KU-Obm" firstAttribute="top" secondItem="AnE-QM-xPu" secondAttribute="bottom" id="hS1-0y-NYv"/>
                             <constraint firstItem="pgD-cP-sCx" firstAttribute="bottom" secondItem="TWx-IL-NF3" secondAttribute="bottom" id="ikN-UZ-RUH"/>
                             <constraint firstItem="pgD-cP-sCx" firstAttribute="trailing" secondItem="TWx-IL-NF3" secondAttribute="trailing" id="xzT-pg-4ur"/>
+                            <constraint firstItem="TWx-IL-NF3" firstAttribute="trailing" secondItem="AnE-QM-xPu" secondAttribute="trailing" id="ygg-cW-G9l"/>
                             <constraint firstItem="pgD-cP-sCx" firstAttribute="leading" secondItem="TWx-IL-NF3" secondAttribute="leading" id="ylJ-oP-SLe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TWx-IL-NF3"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Search" id="uOS-v7-99z"/>
+                    <navigationItem key="navigationItem" title="Search" leftItemsSupplementBackButton="YES" id="uOS-v7-99z"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="foundArtistsTableView" destination="pgD-cP-sCx" id="LGJ-a1-Ndo"/>
                         <outlet property="searchArtistSearchBar" destination="yfM-KU-Obm" id="jBr-6N-6mZ"/>
@@ -54,18 +64,30 @@
             <objects>
                 <viewController id="INi-pd-mtb" customClass="FavoutireArtistViewController" customModule="SongKick" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="48j-ot-nd9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DKA-xQ-hpb">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="741"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <sections/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourites" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pze-Xj-GNg">
+                                <rect key="frame" x="0.0" y="44" width="414" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="bE1-Cc-FuX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DKA-xQ-hpb" firstAttribute="top" secondItem="kEn-Qd-igx" secondAttribute="top" id="Zni-iC-aZO"/>
+                            <constraint firstItem="kEn-Qd-igx" firstAttribute="trailing" secondItem="Pze-Xj-GNg" secondAttribute="trailing" id="IIK-xm-nG2"/>
+                            <constraint firstItem="Pze-Xj-GNg" firstAttribute="top" secondItem="kEn-Qd-igx" secondAttribute="top" id="NPX-aH-t3j"/>
+                            <constraint firstItem="Pze-Xj-GNg" firstAttribute="leading" secondItem="kEn-Qd-igx" secondAttribute="leading" id="o1O-de-4nM"/>
+                            <constraint firstItem="DKA-xQ-hpb" firstAttribute="top" secondItem="Pze-Xj-GNg" secondAttribute="bottom" id="ob2-bo-cZR"/>
                             <constraint firstItem="DKA-xQ-hpb" firstAttribute="bottom" secondItem="kEn-Qd-igx" secondAttribute="bottom" id="rbQ-9c-iR4"/>
                             <constraint firstItem="DKA-xQ-hpb" firstAttribute="leading" secondItem="kEn-Qd-igx" secondAttribute="leading" id="ujJ-VS-yDe"/>
                             <constraint firstItem="DKA-xQ-hpb" firstAttribute="trailing" secondItem="kEn-Qd-igx" secondAttribute="trailing" id="urk-Cj-WMq"/>
@@ -73,6 +95,7 @@
                         <viewLayoutGuide key="safeArea" id="kEn-Qd-igx"/>
                     </view>
                     <navigationItem key="navigationItem" title="Favourites" id="cyd-5E-AkT"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="favouriteArtistsTableView" destination="DKA-xQ-hpb" id="MFN-d1-ZVq"/>
                     </connections>
@@ -86,6 +109,7 @@
             <objects>
                 <tabBarController id="a3y-Os-vZL" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="l5S-Wr-lQj"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="2EQ-jj-8Bb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -106,7 +130,7 @@
             <objects>
                 <navigationController id="3Zm-V2-87Q" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UqU-HU-WBr">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -117,18 +141,22 @@
             </objects>
             <point key="canvasLocation" x="-106" y="583"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Favourites-->
         <scene sceneID="ALt-Eq-0Nj">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FhU-Ti-jBH" sceneMemberID="viewController">
+                <navigationController title="Favourites" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="FhU-Ti-jBH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="J0c-GY-ftB"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ebg-fb-lm7">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ebg-fb-lm7">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c9f-Op-arD">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
+                        <outlet property="favouritesNavigationBar" destination="Ebg-fb-lm7" id="ppA-lz-MB1"/>
                         <segue destination="INi-pd-mtb" kind="relationship" relationship="rootViewController" id="MT3-Kh-frR"/>
                     </connections>
                 </navigationController>
@@ -136,14 +164,14 @@
             </objects>
             <point key="canvasLocation" x="2085.5999999999999" y="126.38680659670166"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search-->
         <scene sceneID="ds9-t9-fAk">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Ak-bH-qty" sceneMemberID="viewController">
+                <navigationController title="Search" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2Ak-bH-qty" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="h34-f3-xc4"/>
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7WG-0T-Mde">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

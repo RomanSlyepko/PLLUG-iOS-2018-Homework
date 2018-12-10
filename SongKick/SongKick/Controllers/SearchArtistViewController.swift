@@ -70,6 +70,7 @@ class SearchArtistViewController: UIViewController {
     
 }
 
+// MARK: - UITableViewDataSource
 extension SearchArtistViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -86,6 +87,7 @@ extension SearchArtistViewController: UITableViewDataSource {
     
 }
 
+// MARK: - UITableViewDelegate
 extension SearchArtistViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let favourite = favouriteAction(at: indexPath)
@@ -94,6 +96,7 @@ extension SearchArtistViewController: UITableViewDelegate {
     }
 }
 
+//MARK: - UISearchBarDelegate
 extension SearchArtistViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

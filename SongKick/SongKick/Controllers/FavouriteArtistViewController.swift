@@ -47,6 +47,7 @@ class FavoutireArtistViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDataSource
 extension FavoutireArtistViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -61,6 +62,7 @@ extension FavoutireArtistViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension FavoutireArtistViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = deleteAction(at: indexPath)
