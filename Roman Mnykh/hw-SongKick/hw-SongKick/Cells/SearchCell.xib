@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" customClass="SearchCell" customModule="hw_SongKick" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="101"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="100.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kWb-dS-6wy">
+                        <rect key="frame" x="-185" y="70" width="107" height="54"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aZ2-fH-Xth">
+                        <rect key="frame" x="20" y="10" width="80" height="80"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="ohV-im-8CK"/>
+                            <constraint firstAttribute="height" constant="80" id="pKi-Cl-3AG"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvB-mR-9mN">
+                        <rect key="frame" x="110" y="10" width="194" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="wYQ-RX-Wvl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="aZ2-fH-Xth" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="DQY-xP-Uee"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gvB-mR-9mN" secondAttribute="bottom" constant="10" id="FHQ-v1-Cye"/>
+                    <constraint firstItem="gvB-mR-9mN" firstAttribute="leading" secondItem="aZ2-fH-Xth" secondAttribute="trailing" constant="10" id="Ieg-hs-eSi"/>
+                    <constraint firstAttribute="trailing" secondItem="gvB-mR-9mN" secondAttribute="trailing" constant="16" id="Ncu-N9-zNn"/>
+                    <constraint firstItem="gvB-mR-9mN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="dQx-gP-TFl"/>
+                    <constraint firstAttribute="bottom" secondItem="aZ2-fH-Xth" secondAttribute="bottom" constant="9.5" id="hIb-eg-6nK"/>
+                    <constraint firstItem="aZ2-fH-Xth" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="oob-gx-9Yc"/>
+                </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                </userDefinedRuntimeAttributes>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="artistImage" destination="aZ2-fH-Xth" id="RXv-Tl-hsT"/>
+                <outlet property="artistName" destination="gvB-mR-9mN" id="5wE-wI-MjL"/>
+            </connections>
+            <point key="canvasLocation" x="233.59999999999999" y="137.18140929535232"/>
+        </tableViewCell>
+    </objects>
+</document>
