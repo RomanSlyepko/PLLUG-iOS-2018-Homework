@@ -10,12 +10,12 @@ import Foundation
 
 struct Artist: Codable {
     var id : Int?
-    var displayName : String?
+    var name : String?
     var url : String?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
-        case displayName = "displayName"
+        case name = "displayName"
         case url = "uri"
     }
     

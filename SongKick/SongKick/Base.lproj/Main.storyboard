@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search Artist View Controller-->
+        <!--Search-->
         <scene sceneID="BUn-zF-uri">
             <objects>
                 <viewController id="W4Y-qf-JxE" customClass="SearchArtistViewController" customModule="SongKick" customModuleProvider="target" sceneMemberID="viewController">
@@ -39,7 +39,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TWx-IL-NF3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="uOS-v7-99z"/>
+                    <navigationItem key="navigationItem" title="Search" id="uOS-v7-99z"/>
                     <connections>
                         <outlet property="foundArtistsTableView" destination="pgD-cP-sCx" id="LGJ-a1-Ndo"/>
                         <outlet property="searchArtistSearchBar" destination="yfM-KU-Obm" id="jBr-6N-6mZ"/>
@@ -49,7 +49,7 @@
             </objects>
             <point key="canvasLocation" x="3024.8000000000002" y="1022.3388305847077"/>
         </scene>
-        <!--Favoutire Artist View Controller-->
+        <!--Favourites-->
         <scene sceneID="rCS-A3-WhC">
             <objects>
                 <viewController id="INi-pd-mtb" customClass="FavoutireArtistViewController" customModule="SongKick" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,9 +72,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kEn-Qd-igx"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cyd-5E-AkT"/>
+                    <navigationItem key="navigationItem" title="Favourites" id="cyd-5E-AkT"/>
                     <connections>
-                        <outlet property="searchResultTableView" destination="DKA-xQ-hpb" id="MFN-d1-ZVq"/>
+                        <outlet property="favouriteArtistsTableView" destination="DKA-xQ-hpb" id="MFN-d1-ZVq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Axy-ux-Hsj" userLabel="First Responder" sceneMemberID="firstResponder"/>

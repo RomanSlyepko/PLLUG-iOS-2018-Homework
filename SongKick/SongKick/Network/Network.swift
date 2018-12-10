@@ -33,7 +33,6 @@ class NetworkManager {
             guard
                 let data = data
             else {
-                #warning("TODO: set alert in case of error")
                 completion(.error(.ResponseError))
                 return
             }
