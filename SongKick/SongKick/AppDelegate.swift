@@ -17,14 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        Network.shared.request(for: "Hardkiss") {
-            switch $0 {
-            case .success(let artists):
-                artists.forEach{ print($0) }
-            case .error(let err):
-                print(err.rawValue)
-            }
-        }
         
         return true
     }

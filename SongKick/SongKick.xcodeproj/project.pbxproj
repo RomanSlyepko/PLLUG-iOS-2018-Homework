@@ -13,6 +13,8 @@
 		301AAA7521BD1AE300539CDD /* Artists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301AAA7421BD1AE300539CDD /* Artists.swift */; };
 		301AAA7821BD2AA300539CDD /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301AAA7721BD2AA300539CDD /* Network.swift */; };
 		301AAA8021BDB21300539CDD /* SearchArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301AAA7F21BDB21300539CDD /* SearchArtistViewController.swift */; };
+		301AAA8321BECFC500539CDD /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301AAA8121BECFC500539CDD /* ArtistTableViewCell.swift */; };
+		301AAA8421BECFC500539CDD /* ArtistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 301AAA8221BECFC500539CDD /* ArtistTableViewCell.xib */; };
 		30922FAC21B9513600DF619F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30922FAB21B9513600DF619F /* AppDelegate.swift */; };
 		30922FAE21B9513600DF619F /* FavouriteArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30922FAD21B9513600DF619F /* FavouriteArtistViewController.swift */; };
 		30922FB121B9513600DF619F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30922FAF21B9513600DF619F /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 		301AAA7421BD1AE300539CDD /* Artists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artists.swift; sourceTree = "<group>"; };
 		301AAA7721BD2AA300539CDD /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		301AAA7F21BDB21300539CDD /* SearchArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchArtistViewController.swift; sourceTree = "<group>"; };
+		301AAA8121BECFC500539CDD /* ArtistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistTableViewCell.swift; sourceTree = "<group>"; };
+		301AAA8221BECFC500539CDD /* ArtistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistTableViewCell.xib; sourceTree = "<group>"; };
 		30922FA821B9513600DF619F /* SongKick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongKick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30922FAB21B9513600DF619F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30922FAD21B9513600DF619F /* FavouriteArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteArtistViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +71,15 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		301AAA8521BECFD800539CDD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				301AAA8121BECFC500539CDD /* ArtistTableViewCell.swift */,
+				301AAA8221BECFC500539CDD /* ArtistTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		30922F9F21B9513600DF619F = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +107,7 @@
 				30922FB721B9513900DF619F /* Info.plist */,
 				301AAA7621BD1B8000539CDD /* Models */,
 				301AAA7721BD2AA300539CDD /* Network.swift */,
+				301AAA8521BECFD800539CDD /* Cells */,
 			);
 			path = SongKick;
 			sourceTree = "<group>";
@@ -158,6 +172,7 @@
 			files = (
 				30922FB621B9513900DF619F /* LaunchScreen.storyboard in Resources */,
 				30922FB321B9513900DF619F /* Assets.xcassets in Resources */,
+				301AAA8421BECFC500539CDD /* ArtistTableViewCell.xib in Resources */,
 				30922FB121B9513600DF619F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +188,7 @@
 				30922FAE21B9513600DF619F /* FavouriteArtistViewController.swift in Sources */,
 				301AAA6D21BBE61D00539CDD /* Response.swift in Sources */,
 				301AAA7521BD1AE300539CDD /* Artists.swift in Sources */,
+				301AAA8321BECFC500539CDD /* ArtistTableViewCell.swift in Sources */,
 				30922FAC21B9513600DF619F /* AppDelegate.swift in Sources */,
 				301AAA7121BD1AB100539CDD /* ResultsPage.swift in Sources */,
 				301AAA7821BD2AA300539CDD /* Network.swift in Sources */,

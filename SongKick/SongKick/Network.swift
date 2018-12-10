@@ -19,9 +19,9 @@ enum NetworkResult {
     case error(NetworkErrors)
 }
 
-class Network {
+class NetworkManager {
     private init() {}
-    static let shared = Network()
+    static let shared = NetworkManager()
     private let request = "https://api.songkick.com/api/3.0/search/artists.json?apikey=io09K9l3ebJxmxe2&query="
     
     func request(for artist: String, completion: @escaping (NetworkResult) -> Void) {

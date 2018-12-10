@@ -40,6 +40,10 @@
                         <viewLayoutGuide key="safeArea" id="TWx-IL-NF3"/>
                     </view>
                     <navigationItem key="navigationItem" id="uOS-v7-99z"/>
+                    <connections>
+                        <outlet property="foundArtistsTableView" destination="pgD-cP-sCx" id="LGJ-a1-Ndo"/>
+                        <outlet property="searchArtistSearchBar" destination="yfM-KU-Obm" id="jBr-6N-6mZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pUN-Sw-BYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
