@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		93F1CB25F713F14DCC62C9A0 /* Pods_SongKick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA97034AA5EEAB9BAB0E91A /* Pods_SongKick.framework */; };
+		CE8C808A21BA864E0080766D /* ResultsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C808921BA864E0080766D /* ResultsPage.swift */; };
+		CE8C808C21BA86690080766D /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C808B21BA86690080766D /* Results.swift */; };
+		CE8C808E21BA868F0080766D /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C808D21BA868F0080766D /* Artist.swift */; };
+		CE8C809021BA86A30080766D /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C808F21BA86A30080766D /* Identifier.swift */; };
+		CED7326321B9578200D23C79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED7326221B9578200D23C79 /* AppDelegate.swift */; };
+		CED7326521B9578200D23C79 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED7326421B9578200D23C79 /* SearchViewController.swift */; };
+		CED7326721B9578200D23C79 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED7326621B9578200D23C79 /* FavoritesViewController.swift */; };
+		CED7326A21B9578200D23C79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED7326821B9578200D23C79 /* Main.storyboard */; };
+		CED7326C21B9578300D23C79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED7326B21B9578300D23C79 /* Assets.xcassets */; };
+		CED7326F21B9578300D23C79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED7326D21B9578300D23C79 /* LaunchScreen.storyboard */; };
+		CED7327721B9683B00D23C79 /* SingerSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED7327621B9683B00D23C79 /* SingerSearch.swift */; };
+		CED7327921B9688E00D23C79 /* DemoNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED7327821B9688E00D23C79 /* DemoNetwork.swift */; };
+		CED7327B21B969A000D23C79 /* DemoNetwork+SearchSinger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED7327A21B969A000D23C79 /* DemoNetwork+SearchSinger.swift */; };
+		CED7327D21B969C600D23C79 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED7327C21B969C600D23C79 /* DataManager.swift */; };
+		CED7327F21B9738700D23C79 /* SearchingSingerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED7327E21B9738700D23C79 /* SearchingSingerTableViewCell.swift */; };
+		CED7328121B97FC300D23C79 /* SingerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED7328021B97FC300D23C79 /* SingerDetailViewController.swift */; };
+		CED7328321B98D4900D23C79 /* FavoritesSingersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED7328221B98D4900D23C79 /* FavoritesSingersList.swift */; };
+		CED7328521B98E4200D23C79 /* FavoriteSignerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED7328421B98E4200D23C79 /* FavoriteSignerTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9CA97034AA5EEAB9BAB0E91A /* Pods_SongKick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SongKick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC74A04F8A6580F8700598A5 /* Pods-SongKick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongKick.release.xcconfig"; path = "Pods/Target Support Files/Pods-SongKick/Pods-SongKick.release.xcconfig"; sourceTree = "<group>"; };
+		C3EF10E0CE9354D00D07FBB9 /* Pods-SongKick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongKick.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SongKick/Pods-SongKick.debug.xcconfig"; sourceTree = "<group>"; };
+		CE8C808921BA864E0080766D /* ResultsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPage.swift; sourceTree = "<group>"; };
+		CE8C808B21BA86690080766D /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		CE8C808D21BA868F0080766D /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		CE8C808F21BA86A30080766D /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
+		CED7325F21B9578200D23C79 /* SongKick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongKick.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CED7326221B9578200D23C79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CED7326421B9578200D23C79 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		CED7326621B9578200D23C79 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		CED7326921B9578200D23C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CED7326B21B9578300D23C79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CED7326E21B9578300D23C79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CED7327021B9578400D23C79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CED7327621B9683B00D23C79 /* SingerSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingerSearch.swift; sourceTree = "<group>"; };
+		CED7327821B9688E00D23C79 /* DemoNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoNetwork.swift; sourceTree = "<group>"; };
+		CED7327A21B969A000D23C79 /* DemoNetwork+SearchSinger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DemoNetwork+SearchSinger.swift"; sourceTree = "<group>"; };
+		CED7327C21B969C600D23C79 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		CED7327E21B9738700D23C79 /* SearchingSingerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingSingerTableViewCell.swift; sourceTree = "<group>"; };
+		CED7328021B97FC300D23C79 /* SingerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingerDetailViewController.swift; sourceTree = "<group>"; };
+		CED7328221B98D4900D23C79 /* FavoritesSingersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSingersList.swift; sourceTree = "<group>"; };
+		CED7328421B98E4200D23C79 /* FavoriteSignerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSignerTableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CED7325C21B9578200D23C79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93F1CB25F713F14DCC62C9A0 /* Pods_SongKick.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2432AB2F78CBCBB1112A84DF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C3EF10E0CE9354D00D07FBB9 /* Pods-SongKick.debug.xcconfig */,
+				BC74A04F8A6580F8700598A5 /* Pods-SongKick.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE8C808621BA85F60080766D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CED7327A21B969A000D23C79 /* DemoNetwork+SearchSinger.swift */,
+				CED7327821B9688E00D23C79 /* DemoNetwork.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CE8C808721BA861D0080766D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CED7327621B9683B00D23C79 /* SingerSearch.swift */,
+				CE8C808921BA864E0080766D /* ResultsPage.swift */,
+				CE8C808B21BA86690080766D /* Results.swift */,
+				CE8C808D21BA868F0080766D /* Artist.swift */,
+				CE8C808F21BA86A30080766D /* Identifier.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE8C809121BA86E20080766D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CED7326621B9578200D23C79 /* FavoritesViewController.swift */,
+				CED7326421B9578200D23C79 /* SearchViewController.swift */,
+				CED7328021B97FC300D23C79 /* SingerDetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CEA3F64821BC2CA300B79C07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CED7326821B9578200D23C79 /* Main.storyboard */,
+				CED7326B21B9578300D23C79 /* Assets.xcassets */,
+				CED7326D21B9578300D23C79 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CEA3F64921BC2CCD00B79C07 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CED7328421B98E4200D23C79 /* FavoriteSignerTableViewCell.swift */,
+				CED7327E21B9738700D23C79 /* SearchingSingerTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CED7325621B9578200D23C79 = {
+			isa = PBXGroup;
+			children = (
+				CED7326121B9578200D23C79 /* SongKick */,
+				CED7326021B9578200D23C79 /* Products */,
+				2432AB2F78CBCBB1112A84DF /* Pods */,
+				DE38077F67F9737940BA2FAB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CED7326021B9578200D23C79 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CED7325F21B9578200D23C79 /* SongKick.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CED7326121B9578200D23C79 /* SongKick */ = {
+			isa = PBXGroup;
+			children = (
+				CED7326221B9578200D23C79 /* AppDelegate.swift */,
+				CED7327C21B969C600D23C79 /* DataManager.swift */,
+				CED7328221B98D4900D23C79 /* FavoritesSingersList.swift */,
+				CE8C809121BA86E20080766D /* ViewControllers */,
+				CEA3F64921BC2CCD00B79C07 /* Cell */,
+				CE8C808721BA861D0080766D /* Models */,
+				CE8C808621BA85F60080766D /* Network */,
+				CEA3F64821BC2CA300B79C07 /* Resources */,
+				CED7327021B9578400D23C79 /* Info.plist */,
+			);
+			path = SongKick;
+			sourceTree = "<group>";
+		};
+		DE38077F67F9737940BA2FAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9CA97034AA5EEAB9BAB0E91A /* Pods_SongKick.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CED7325E21B9578200D23C79 /* SongKick */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CED7327321B9578400D23C79 /* Build configuration list for PBXNativeTarget "SongKick" */;
+			buildPhases = (
+				B8386C5A897F757B60ACEBB4 /* [CP] Check Pods Manifest.lock */,
+				CED7325B21B9578200D23C79 /* Sources */,
+				CED7325C21B9578200D23C79 /* Frameworks */,
+				CED7325D21B9578200D23C79 /* Resources */,
+				818B169835A15D3D9F42464F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SongKick;
+			productName = SongKick;
+			productReference = CED7325F21B9578200D23C79 /* SongKick.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CED7325721B9578200D23C79 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Volodymyr Chorniak";
+				TargetAttributes = {
+					CED7325E21B9578200D23C79 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = CED7325A21B9578200D23C79 /* Build configuration list for PBXProject "SongKick" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CED7325621B9578200D23C79;
+			productRefGroup = CED7326021B9578200D23C79 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CED7325E21B9578200D23C79 /* SongKick */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CED7325D21B9578200D23C79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CED7326F21B9578300D23C79 /* LaunchScreen.storyboard in Resources */,
+				CED7326C21B9578300D23C79 /* Assets.xcassets in Resources */,
+				CED7326A21B9578200D23C79 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		818B169835A15D3D9F42464F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SongKick/Pods-SongKick-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SongKick/Pods-SongKick-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8386C5A897F757B60ACEBB4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SongKick-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CED7325B21B9578200D23C79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CED7326721B9578200D23C79 /* FavoritesViewController.swift in Sources */,
+				CE8C809021BA86A30080766D /* Identifier.swift in Sources */,
+				CED7328121B97FC300D23C79 /* SingerDetailViewController.swift in Sources */,
+				CED7327921B9688E00D23C79 /* DemoNetwork.swift in Sources */,
+				CED7328321B98D4900D23C79 /* FavoritesSingersList.swift in Sources */,
+				CED7328521B98E4200D23C79 /* FavoriteSignerTableViewCell.swift in Sources */,
+				CED7326321B9578200D23C79 /* AppDelegate.swift in Sources */,
+				CE8C808E21BA868F0080766D /* Artist.swift in Sources */,
+				CED7327D21B969C600D23C79 /* DataManager.swift in Sources */,
+				CE8C808A21BA864E0080766D /* ResultsPage.swift in Sources */,
+				CED7327F21B9738700D23C79 /* SearchingSingerTableViewCell.swift in Sources */,
+				CE8C808C21BA86690080766D /* Results.swift in Sources */,
+				CED7327B21B969A000D23C79 /* DemoNetwork+SearchSinger.swift in Sources */,
+				CED7326521B9578200D23C79 /* SearchViewController.swift in Sources */,
+				CED7327721B9683B00D23C79 /* SingerSearch.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CED7326821B9578200D23C79 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CED7326921B9578200D23C79 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CED7326D21B9578300D23C79 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CED7326E21B9578300D23C79 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CED7327121B9578400D23C79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CED7327221B9578400D23C79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CED7327421B9578400D23C79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3EF10E0CE9354D00D07FBB9 /* Pods-SongKick.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2BGX5BR6RB;
+				INFOPLIST_FILE = SongKick/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chorniak.SongKick;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CED7327521B9578400D23C79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC74A04F8A6580F8700598A5 /* Pods-SongKick.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2BGX5BR6RB;
+				INFOPLIST_FILE = SongKick/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chorniak.SongKick;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CED7325A21B9578200D23C79 /* Build configuration list for PBXProject "SongKick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CED7327121B9578400D23C79 /* Debug */,
+				CED7327221B9578400D23C79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CED7327321B9578400D23C79 /* Build configuration list for PBXNativeTarget "SongKick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CED7327421B9578400D23C79 /* Debug */,
+				CED7327521B9578400D23C79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CED7325721B9578200D23C79 /* Project object */;
+}
