@@ -156,7 +156,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <outlet property="favouritesNavigationBar" destination="Ebg-fb-lm7" id="ppA-lz-MB1"/>
                         <segue destination="INi-pd-mtb" kind="relationship" relationship="rootViewController" id="MT3-Kh-frR"/>
                     </connections>
                 </navigationController>
