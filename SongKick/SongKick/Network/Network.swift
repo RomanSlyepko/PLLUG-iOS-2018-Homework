@@ -25,14 +25,21 @@ class NetworkManager {
     private let request = "https://api.songkick.com/api/3.0/search/artists.json?apikey=io09K9l3ebJxmxe2&query="
     
     func request(for artist: String, completion: @escaping (NetworkResult) -> Void) {
+        
         let url = URL(string: request+artist)!
         URLSession.shared.dataTask(with: url) { data, response, error in
             if error != nil {
                 completion(.error(.NetworkError))
             }
             guard
-                let data = data
+                let data = data,
+                let response = response as? HTTPURLResponse
             else {
+                completion(.error(.ResponseError))
+                return
+            }
+            
+            if response.statusCode != 200 {
                 completion(.error(.ResponseError))
                 return
             }

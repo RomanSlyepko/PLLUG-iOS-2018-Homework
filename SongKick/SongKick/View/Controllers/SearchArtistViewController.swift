@@ -103,7 +103,8 @@ extension SearchArtistViewController: UISearchBarDelegate {
         
         self.searchArtistSearchBar.resignFirstResponder()
         guard let artistName = self.searchArtistSearchBar.text else { return }
-        self.search(for: artistName)
+        let artistSearch = validateArtist(artistName)
+        self.search(for: artistSearch)
         
     }
 }
