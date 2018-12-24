@@ -21,6 +21,8 @@
 		30922FB321B9513900DF619F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30922FB221B9513900DF619F /* Assets.xcassets */; };
 		30922FB621B9513900DF619F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30922FB421B9513900DF619F /* LaunchScreen.storyboard */; };
 		30BF32F321CFEF64005139AE /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BF32F221CFEF64005139AE /* Validation.swift */; };
+		30DA976021D1592D00971DD2 /* ArtistInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA975E21D1592D00971DD2 /* ArtistInfoViewController.swift */; };
+		30DA976121D1592D00971DD2 /* ArtistInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30DA975F21D1592D00971DD2 /* ArtistInfoViewController.xib */; };
 		30EFAFF721BEF1140008E895 /* DataStorager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EFAFF621BEF1140008E895 /* DataStorager.swift */; };
 		30EFAFFA21BF12AB0008E895 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EFAFF921BF12AB0008E895 /* Alert.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +44,8 @@
 		30922FB521B9513900DF619F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30922FB721B9513900DF619F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30BF32F221CFEF64005139AE /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		30DA975E21D1592D00971DD2 /* ArtistInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistInfoViewController.swift; sourceTree = "<group>"; };
+		30DA975F21D1592D00971DD2 /* ArtistInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistInfoViewController.xib; sourceTree = "<group>"; };
 		30EFAFF621BEF1140008E895 /* DataStorager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorager.swift; sourceTree = "<group>"; };
 		30EFAFF921BF12AB0008E895 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +77,8 @@
 			children = (
 				30922FAD21B9513600DF619F /* FavouriteArtistViewController.swift */,
 				301AAA7F21BDB21300539CDD /* SearchArtistViewController.swift */,
+				30DA975E21D1592D00971DD2 /* ArtistInfoViewController.swift */,
+				30DA975F21D1592D00971DD2 /* ArtistInfoViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -196,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30922FB621B9513900DF619F /* LaunchScreen.storyboard in Resources */,
+				30DA976121D1592D00971DD2 /* ArtistInfoViewController.xib in Resources */,
 				30922FB321B9513900DF619F /* Assets.xcassets in Resources */,
 				301AAA8421BECFC500539CDD /* ArtistTableViewCell.xib in Resources */,
 				30922FB121B9513600DF619F /* Main.storyboard in Resources */,
@@ -220,6 +227,7 @@
 				30EFAFFA21BF12AB0008E895 /* Alert.swift in Sources */,
 				301AAA7821BD2AA300539CDD /* Network.swift in Sources */,
 				30BF32F321CFEF64005139AE /* Validation.swift in Sources */,
+				30DA976021D1592D00971DD2 /* ArtistInfoViewController.swift in Sources */,
 				301AAA7321BD1AD000539CDD /* Results.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

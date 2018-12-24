@@ -58,8 +58,10 @@ class SearchArtistViewController: UIViewController {
     fileprivate func favouriteAction(at indexPath: IndexPath) -> UIContextualAction {
         let artist = DataStorager.shared.artists[indexPath.row]
         let action = UIContextualAction(style: .normal, title: "Add to Favourite") { action, view, completion in
-            DataStorager.shared.favouriteArtists.append(artist)
-            completion(true)
+            if !DataStorager.shared.favouriteArtists.contains(artist) {
+                DataStorager.shared.favouriteArtists.append(artist)
+                completion(true)
+            }
         }
         action.backgroundColor = .green
         print(DataStorager.shared.favouriteArtists)
@@ -102,8 +104,13 @@ extension SearchArtistViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         self.searchArtistSearchBar.resignFirstResponder()
-        guard let artistName = self.searchArtistSearchBar.text else { return }
-        let artistSearch = validateArtist(artistName)
+        guard
+            let artistName = self.searchArtistSearchBar.text,
+            let artistSearch = validateArtist(artistName)
+            else {
+                Alert.showErrorAlert(on: self, message: "Incorrect artist name")
+                return
+        }
         self.search(for: artistSearch)
         
     }

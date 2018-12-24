@@ -8,6 +8,6 @@
 
 import Foundation
 
-func validateArtist(_ text: String) -> String {
-    return String(text.split(separator: " ").joined(separator: "-"))
+func validateArtist(_ text: String) -> String? {
+    return text.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
 }
