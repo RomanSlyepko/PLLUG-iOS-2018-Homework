@@ -10,5 +10,5 @@ import Foundation
 
 struct Identifier: Codable {
     let mbid: String
-    let href, eventsHref, setlistsHref: String
+    let href, eventsHref, setlistsHref: String?
 }
