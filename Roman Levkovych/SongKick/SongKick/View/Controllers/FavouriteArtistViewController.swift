@@ -60,6 +60,10 @@ extension FavoutireArtistViewController: UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }
 
 // MARK: - UITableViewDelegate

@@ -1,13 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArtistInfoViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArtistInfoViewController" customModule="SongKick" customModuleProvider="target">
             <connections>
+                <outlet property="artistNameLabel" destination="e4V-QA-GoS" id="OAZ-9H-mRx"/>
+                <outlet property="dateUntilArtistOnTourLabel" destination="v7m-aW-gXZ" id="Fo0-p2-P73"/>
+                <outlet property="eventsTableView" destination="eMe-1c-ruZ" id="Qtj-uU-eZi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,8 +22,52 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4V-QA-GoS">
+                    <rect key="frame" x="16" y="36" width="343" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On tour until:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hqc-LP-qlc">
+                    <rect key="frame" x="16" y="96.5" width="100" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="6l3-tV-FDs"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7m-aW-gXZ">
+                    <rect key="frame" x="124" y="96.5" width="36" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eMe-1c-ruZ">
+                    <rect key="frame" x="16" y="133.5" width="343" height="517.5"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                    <sections/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+            <constraints>
+                <constraint firstItem="v7m-aW-gXZ" firstAttribute="height" secondItem="Hqc-LP-qlc" secondAttribute="height" id="Ftt-tY-8Nw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="e4V-QA-GoS" secondAttribute="trailing" constant="16" id="L8O-b1-Rg9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eMe-1c-ruZ" secondAttribute="bottom" constant="16" id="T1H-4c-qSc"/>
+                <constraint firstItem="v7m-aW-gXZ" firstAttribute="leading" secondItem="Hqc-LP-qlc" secondAttribute="trailing" constant="8" id="TQz-jD-0cP"/>
+                <constraint firstItem="e4V-QA-GoS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="VHx-z5-XeU"/>
+                <constraint firstItem="v7m-aW-gXZ" firstAttribute="top" secondItem="Hqc-LP-qlc" secondAttribute="top" id="Xe2-41-uRH"/>
+                <constraint firstItem="v7m-aW-gXZ" firstAttribute="leading" secondItem="Hqc-LP-qlc" secondAttribute="trailing" constant="8" id="bQK-PT-Hhc"/>
+                <constraint firstItem="e4V-QA-GoS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="o0j-7i-6wV"/>
+                <constraint firstItem="Hqc-LP-qlc" firstAttribute="leading" secondItem="e4V-QA-GoS" secondAttribute="leading" id="oIs-vK-WG7"/>
+                <constraint firstItem="eMe-1c-ruZ" firstAttribute="leading" secondItem="e4V-QA-GoS" secondAttribute="leading" id="u9c-MI-1Fe"/>
+                <constraint firstItem="eMe-1c-ruZ" firstAttribute="trailing" secondItem="e4V-QA-GoS" secondAttribute="trailing" id="uWt-MF-2bS"/>
+                <constraint firstItem="eMe-1c-ruZ" firstAttribute="top" secondItem="Hqc-LP-qlc" secondAttribute="bottom" constant="16" id="vKZ-8S-TWu"/>
+                <constraint firstItem="Hqc-LP-qlc" firstAttribute="top" secondItem="e4V-QA-GoS" secondAttribute="bottom" constant="40" id="zNk-4D-9r3"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
         </view>
     </objects>
 </document>

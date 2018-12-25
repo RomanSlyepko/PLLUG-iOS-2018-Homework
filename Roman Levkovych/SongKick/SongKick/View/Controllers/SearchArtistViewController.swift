@@ -69,7 +69,6 @@ class SearchArtistViewController: UIViewController {
         return action
     }
     
-    
 }
 
 // MARK: - UITableViewDataSource
@@ -112,6 +111,5 @@ extension SearchArtistViewController: UISearchBarDelegate {
                 return
         }
         self.search(for: artistSearch)
-        
     }
 }
