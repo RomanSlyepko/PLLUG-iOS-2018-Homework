@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class ArtistInfoViewController: UIViewController {
 
     @IBOutlet weak var artistNameLabel: UILabel!

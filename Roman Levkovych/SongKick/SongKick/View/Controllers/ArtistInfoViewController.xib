@@ -50,7 +50,7 @@
                     <sections/>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="v7m-aW-gXZ" firstAttribute="height" secondItem="Hqc-LP-qlc" secondAttribute="height" id="Ftt-tY-8Nw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="e4V-QA-GoS" secondAttribute="trailing" constant="16" id="L8O-b1-Rg9"/>
@@ -67,7 +67,7 @@
                 <constraint firstItem="Hqc-LP-qlc" firstAttribute="top" secondItem="e4V-QA-GoS" secondAttribute="bottom" constant="40" id="zNk-4D-9r3"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
+            <point key="canvasLocation" x="68" y="152"/>
         </view>
     </objects>
 </document>

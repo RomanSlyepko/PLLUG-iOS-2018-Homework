@@ -8,6 +8,10 @@
 
 import UIKit
 
+enum Segues: String {
+    case showInfo
+}
+
 
 class SearchArtistViewController: UIViewController {
 
@@ -37,18 +41,19 @@ class SearchArtistViewController: UIViewController {
         self.foundArtistsTableView.register(nib, forCellReuseIdentifier: ArtistTableViewCell.identifier)
     }
     
-    func save(artists: [Artist]) {
+    func save(results: Results) {
         DispatchQueue.main.async {
+            guard let artists = results.artist else { return }
             DataStorager.shared.artists = artists
             self.reloadTableView()
         }
     }
     
     func search(for artist: String) {
-        NetworkManager.shared.request(for: artist) {
+        NetworkManager.shared.getArtist(for: artist) {
             switch $0 {
             case .success(let data):
-                self.save(artists: data)
+                self.save(results: data)
             case .error(let error):
                 Alert.showErrorAlert(on: self, message: error.rawValue)
             }
@@ -111,5 +116,9 @@ extension SearchArtistViewController: UISearchBarDelegate {
                 return
         }
         self.search(for: artistSearch)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: Segues.showInfo.rawValue, sender: self)
     }
 }

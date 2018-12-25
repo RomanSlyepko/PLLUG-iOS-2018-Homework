@@ -15,18 +15,20 @@ enum NetworkErrors: String, Error {
 }
 
 enum NetworkResult {
-    case success([Artist])
+    case success(Results)
     case error(NetworkErrors)
 }
 
-class NetworkManager {
+class Network {
     private init() {}
-    static let shared = NetworkManager()
-    private let request = "https://api.songkick.com/api/3.0/search/artists.json?apikey=io09K9l3ebJxmxe2&query="
+    static let shared = Network()
     
-    func request(for artist: String, completion: @escaping (NetworkResult) -> Void) {
-        
-        let url = URL(string: request+artist)!
+    func request(route: APIRouter, completion: @escaping (NetworkResult) -> Void) {
+        guard let url = try? route.asURL() else { return }
+        self.sendRequest(with: url, completion: completion)
+    }
+    
+    private func sendRequest(with url: URL, completion: @escaping (NetworkResult) -> Void) {
         URLSession.shared.dataTask(with: url) { data, response, error in
             if error != nil {
                 completion(.error(.NetworkError))
@@ -34,9 +36,9 @@ class NetworkManager {
             guard
                 let data = data,
                 let response = response as? HTTPURLResponse
-            else {
-                completion(.error(.ResponseError))
-                return
+                else {
+                    completion(.error(.ResponseError))
+                    return
             }
             
             if response.statusCode != 200 {
@@ -46,16 +48,16 @@ class NetworkManager {
             
             guard
                 let apiResponse = try? JSONDecoder().decode(Response.self, from: data),
-                let artists = apiResponse.resultsPage.results?.artist
+                let results = apiResponse.resultsPage.results
                 else {
                     print("Error")
-
                     completion(.error(.DecodingError))
                     return
             }
             DispatchQueue.main.async {
-                completion(.success(artists))
+                completion(.success(results))
             }
-        }.resume()
+            }.resume()
     }
+    
 }

@@ -12,6 +12,6 @@ struct Results: Codable {
     var artist : [Artist]?
     
     enum CodingKeys: String, CodingKey {
-        case artist = "artist"
+        case artist
     }
 }
