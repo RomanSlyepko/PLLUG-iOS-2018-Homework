@@ -15,14 +15,14 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" customClass="SearchCell" customModule="hw_SongKick" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="101"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="100.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kWb-dS-6wy">
-                        <rect key="frame" x="-185" y="70" width="107" height="54"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ocr-dx-o3S">
+                        <rect key="frame" x="5" y="5" width="310" height="90"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aZ2-fH-Xth">
                         <rect key="frame" x="20" y="10" width="80" height="80"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -31,33 +31,38 @@
                             <constraint firstAttribute="height" constant="80" id="pKi-Cl-3AG"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvB-mR-9mN">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvB-mR-9mN">
                         <rect key="frame" x="110" y="10" width="194" height="80"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="80" id="wYQ-RX-Wvl"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
+                        <fontDescription key="fontDescription" name="NotoSansChakma-Regular" family="Noto Sans Chakma" pointSize="21"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstItem="Ocr-dx-o3S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="1Cn-3K-5cg"/>
                     <constraint firstItem="aZ2-fH-Xth" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="DQY-xP-Uee"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gvB-mR-9mN" secondAttribute="bottom" constant="10" id="FHQ-v1-Cye"/>
+                    <constraint firstAttribute="bottom" secondItem="gvB-mR-9mN" secondAttribute="bottom" constant="10" id="Dqb-Lt-926"/>
                     <constraint firstItem="gvB-mR-9mN" firstAttribute="leading" secondItem="aZ2-fH-Xth" secondAttribute="trailing" constant="10" id="Ieg-hs-eSi"/>
+                    <constraint firstItem="Ocr-dx-o3S" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="KtE-uX-dE5"/>
+                    <constraint firstAttribute="bottom" secondItem="Ocr-dx-o3S" secondAttribute="bottom" constant="5" id="NIY-18-50G"/>
                     <constraint firstAttribute="trailing" secondItem="gvB-mR-9mN" secondAttribute="trailing" constant="16" id="Ncu-N9-zNn"/>
                     <constraint firstItem="gvB-mR-9mN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="dQx-gP-TFl"/>
-                    <constraint firstAttribute="bottom" secondItem="aZ2-fH-Xth" secondAttribute="bottom" constant="9.5" id="hIb-eg-6nK"/>
+                    <constraint firstAttribute="bottom" secondItem="aZ2-fH-Xth" secondAttribute="bottom" constant="10" id="hIb-eg-6nK"/>
                     <constraint firstItem="aZ2-fH-Xth" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="oob-gx-9Yc"/>
+                    <constraint firstAttribute="trailing" secondItem="Ocr-dx-o3S" secondAttribute="trailing" constant="5" id="p7k-r0-E37"/>
                 </constraints>
                 <userDefinedRuntimeAttributes>
                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                 </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.89744755993150682" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="artistImage" destination="aZ2-fH-Xth" id="RXv-Tl-hsT"/>
                 <outlet property="artistName" destination="gvB-mR-9mN" id="5wE-wI-MjL"/>
+                <outlet property="containerView" destination="Ocr-dx-o3S" id="YVu-nm-mKK"/>
             </connections>
             <point key="canvasLocation" x="233.59999999999999" y="137.18140929535232"/>
         </tableViewCell>

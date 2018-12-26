@@ -1,44 +1,33 @@
 //
-//  SearchCell.swift
+//  ArtistInfoCell.swift
 //  hw-SongKick
 //
-//  Created by Roman Mnykh on 12/8/18.
+//  Created by Roman Mnykh on 12/25/18.
 //  Copyright © 2018 Roman Mnykh. All rights reserved.
 //
 
 import UIKit
 
-class SearchCell: UITableViewCell {
+class ArtistInfoCell: UITableViewCell {
+
+    static let identifier: String = "ArtistInfoCell"
     
-    static let identifier = "SearchCell"
     @IBOutlet weak var artistName: UILabel!
+    @IBOutlet weak var onTourLabel: UILabel!
+    @IBOutlet weak var upcomingEventsButton: UIButton!
     
-    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var artistImage: UIImageView!
+    @IBOutlet weak var containerView: UIView!
+    var delegate: EventsButtonDelegate?
+    
+    @IBAction func eventsButtonClicked(_ sender: UIButton) {
+        delegate?.eventsButtonTapped(sender: sender)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        configureImageView()
-        containerView.layer.cornerRadius = 6
-        containerView.layer.masksToBounds = true
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-//        if let viewWithTag = self.artistImage.viewWithTag(100) {
-//            viewWithTag.removeFromSuperview()
-//        }
-        artistImage.image = UIImage(named: "noimage")
-    }
-    
-    func configureImageView() {
-        artistImage.layer.cornerRadius = self.artistImage.frame.size.width / 2
-        artistImage.layer.borderWidth = 1
-        artistImage.layer.borderColor = #colorLiteral(red: 0.8595529199, green: 0.8596976399, blue: 0.8595339656, alpha: 1)
-        artistImage.clipsToBounds = true
-        artistImage.contentMode = .scaleToFill
-        artistImage.image = UIImage(named: "noimage")
+        configureViews()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -47,8 +36,23 @@ class SearchCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setDataFromModel(_ model: ArtistModel) {
+    func configureViews() {
+        containerView.layer.cornerRadius = 6
+        containerView.layer.masksToBounds = true
+        artistImage.layer.cornerRadius = 6
+        artistImage.layer.masksToBounds = true
+        artistImage.image = UIImage(named: "noimage")
+        artistImage.contentMode = .scaleToFill
+    }
+    
+    func setDataFromModel(_ model: ArtistModel, numberOfEvents: Int) {
         artistName.text = model.displayName
+        if let onTourString = model.onTourUntil {
+            onTourLabel.text = "On tour until: \(onTourString)"
+        } else {
+            onTourLabel.text = "On tour: No"
+        }
+        upcomingEventsButton.setTitle("Upcoming events: \(numberOfEvents)", for: .normal)
         
         RequestManager.shared.getArtistImage(id: model.id) { image in
             if let image = image {
@@ -83,7 +87,8 @@ class SearchCell: UITableViewCell {
         
         return image
     }
-    
 }
 
-
+protocol EventsButtonDelegate {
+    func eventsButtonTapped(sender: UIButton)
+}

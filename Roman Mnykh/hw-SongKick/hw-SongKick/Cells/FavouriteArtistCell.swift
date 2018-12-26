@@ -1,24 +1,22 @@
 //
-//  SearchCell.swift
+//  FavouriteArtistCell.swift
 //  hw-SongKick
 //
-//  Created by Roman Mnykh on 12/8/18.
+//  Created by Roman Mnykh on 12/23/18.
 //  Copyright © 2018 Roman Mnykh. All rights reserved.
 //
 
 import UIKit
 
-class SearchCell: UITableViewCell {
-    
-    static let identifier = "SearchCell"
-    @IBOutlet weak var artistName: UILabel!
-    
+class FavouriteArtistCell: UICollectionViewCell {
+
+    static let identifier = "FavouriteArtistCell"
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var artistImage: UIImageView!
+    @IBOutlet weak var artistName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         configureImageView()
         containerView.layer.cornerRadius = 6
         containerView.layer.masksToBounds = true
@@ -26,33 +24,18 @@ class SearchCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-//        if let viewWithTag = self.artistImage.viewWithTag(100) {
-//            viewWithTag.removeFromSuperview()
-//        }
         artistImage.image = UIImage(named: "noimage")
     }
     
     func configureImageView() {
-        artistImage.layer.cornerRadius = self.artistImage.frame.size.width / 2
-        artistImage.layer.borderWidth = 1
-        artistImage.layer.borderColor = #colorLiteral(red: 0.8595529199, green: 0.8596976399, blue: 0.8595339656, alpha: 1)
-        artistImage.clipsToBounds = true
-        artistImage.contentMode = .scaleToFill
         artistImage.image = UIImage(named: "noimage")
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        artistImage.contentMode = .scaleToFill
     }
     
     func setDataFromModel(_ model: ArtistModel) {
         artistName.text = model.displayName
-        
         RequestManager.shared.getArtistImage(id: model.id) { image in
             if let image = image {
-                //self.artistImage.image = image
                 self.fadeIn(image: image)
             }
         }
@@ -83,7 +66,5 @@ class SearchCell: UITableViewCell {
         
         return image
     }
-    
+
 }
-
-
