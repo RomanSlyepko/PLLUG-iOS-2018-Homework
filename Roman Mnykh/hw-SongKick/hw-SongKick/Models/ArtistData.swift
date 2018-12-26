@@ -7,42 +7,37 @@
 //
 
 import Foundation
+import UIKit
 
 final class ArtistData {
     
+    private init() {}
+    
     static let shared = ArtistData()
     private var observers: [DataObserver] = []
-    
-    private var songKickResult: SongKickModel?
     var favouriteArtists: [ArtistModel] = []
-    
-    // - TODO: Labels to show errors
-    func fetchData(name: String) {
-        let requestManager = RequestManager()
-        requestManager.getSongKickData(request: SongKickRouter.findArtist(called: name)) {
-            switch $0 {
-            case .success(let model):
-                print(model)
-                self.songKickResult = model
-                self.notify()
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
     
     func addNewFavourite(artist: ArtistModel) {
         guard favouriteArtists.contains(where: { $0.id == artist.id }) else {
             favouriteArtists.append(artist)
-            notify()
+            notify(.favouriteDidAdd)
             return
         }
     }
     
-    func getArtists() -> [ArtistModel]? {
-        return songKickResult?.resultsPage.results.artist
+    func removeNewFavourite(artist: ArtistModel) {
+        if let index = favouriteArtists.firstIndex(where: { $0.id == artist.id } ) {
+            favouriteArtists.remove(at: index)
+            notify(.favouriteDidAdd)
+        }
     }
 }
+
+enum ButtonOptions: String {
+    case favourite = "Favourite"
+    case remove = "Remove"
+}
+
 
 extension ArtistData: ObservableData {
     
@@ -58,9 +53,9 @@ extension ArtistData: ObservableData {
         }
     }
     
-    func notify() {
+    func notify(_ action: Action) {
         observers.forEach { observer in
-            observer.notifyDataChanged()
+            observer.notifyDataChanged(action)
         }
     }
 }

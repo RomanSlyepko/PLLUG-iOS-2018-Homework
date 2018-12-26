@@ -12,7 +12,10 @@ import UIKit
 // -------------------------------------
 // MARK: - RequestManager
 // -------------------------------------
-class RequestManager {
+final class RequestManager {
+    static let shared = RequestManager()
+    private init() {}
+    
     func getSongKickData(request: Router,
                          completion: @escaping (NetworkResult<SongKickModel>) -> ()) {
         Network.shared.requestData(request: request,

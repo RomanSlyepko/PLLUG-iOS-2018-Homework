@@ -11,9 +11,13 @@ import Foundation
 protocol ObservableData: class {
     func addObserver(_ observer: DataObserver)
     func removeObserver(_ observer: DataObserver)
-    func notify()
+    func notify(_ action: Action)
+}
+
+enum Action {
+    case favouriteDidAdd
 }
 
 protocol DataObserver: class {
-    func notifyDataChanged()
+    func notifyDataChanged(_ action: Action)
 }
