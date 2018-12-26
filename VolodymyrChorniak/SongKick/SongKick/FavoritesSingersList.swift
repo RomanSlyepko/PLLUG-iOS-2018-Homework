@@ -12,20 +12,12 @@ class FavoriteArtist {
     static let sharedArtist = FavoriteArtist()
     private(set) var saved: [Artist] = []
     
+    private init() {}
     
     func saveArtist(artist: Artist) -> Bool {
-        if !inArray(artist: artist) {
+        if !saved.contains(artist) {
             saved.append(artist)
             return true
-        }
-        return false
-    }
-    
-    private func inArray(artist: Artist) -> Bool {
-        for singer in saved {
-            if singer.id == artist.id {
-                return true
-            }
         }
         return false
     }
@@ -33,5 +25,4 @@ class FavoriteArtist {
     func deleteArtist(index: Int) {
             saved.remove(at: index)
     }
-    
 }

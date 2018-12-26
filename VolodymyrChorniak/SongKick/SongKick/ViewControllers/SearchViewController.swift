@@ -10,11 +10,15 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
-    let dataManager = DataManager()
-    var searchingArtist: SingerSearch?
-    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    
+    let dataManager = DataManager()
+    var searchingArtist: SingerSearch?
+    var allArtist = [Artist]()
+    
+    private var page = 1
+    private var total = 50
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +27,9 @@ class SearchViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let detailVC = segue.destination as? SingerDetailViewController
-        if let artist = sender as? Artist {
-            detailVC?.singer = artist
-            detailVC?.isFavorite = false
-        }
+        guard let indexPathRow = tableView.indexPathForSelectedRow?.row else { return }
+        detailVC?.singer = allArtist[indexPathRow]
+        detailVC?.isFavorite = false
     }
     
     func showAlert() {
@@ -36,65 +39,84 @@ class SearchViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    
     func getData() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        dataManager.searchSinger(withName: searchBar.text!, completion: { (result) in
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            self.searchingArtist = result
+        dataManager.searchSinger(withName: searchBar.text!, page: page, completion: { (result) in
             DispatchQueue.main.async {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                self.allArtist += result.resultsPage.results.artist
+                self.searchingArtist = result
                 self.tableView.reloadData()
             }
         }) { (error) in
             print(error.localizedDescription)
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            self.showAlert()
+            DispatchQueue.main.async {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                self.showAlert()
+            }
         }
+    }
+    
+    func resetArtist() {
+        page = 1
+        total = 50
+        allArtist = [Artist]()
+        searchingArtist = nil
     }
 }
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchingArtist?.resultsPage.results.artist.count ?? 0
+        return allArtist.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchSinger") as! SearchingSingerTableViewCell
-        cell.singerNameLabel.text = searchingArtist?.resultsPage.results.artist[indexPath.row].displayName
+        cell.singerNameLabel.text = allArtist[indexPath.row].displayName
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let artist = searchingArtist?.resultsPage.results.artist[indexPath.row]
+        let artist = allArtist[indexPath.row]
         performSegue(withIdentifier: "SingerDetail", sender: artist)
         searchBar.resignFirstResponder()
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let totalEntries = searchingArtist?.resultsPage.totalEntries else { return }
+        if indexPath.row == (total - 5), totalEntries > total{
+            page += 1
+            total += 50
+            getData()
+        }
     }
 }
 
 
 extension SearchViewController: UISearchBarDelegate {
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if searchBar.text != nil, searchBar.text != "" {
+            resetArtist()
             getData()
         } else {
-            searchingArtist = nil
+            resetArtist()
             self.tableView.reloadData()
         }
         searchBar.resignFirstResponder()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchingArtist = nil
+        resetArtist()
         self.tableView.reloadData()
         searchBar.resignFirstResponder()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text == nil || searchBar.text == "" {
-            searchingArtist = nil
+             resetArtist()
             self.tableView.reloadData()
         }
     }
 }
-

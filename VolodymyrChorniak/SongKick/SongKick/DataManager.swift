@@ -9,12 +9,9 @@
 import Foundation
 
 class DataManager {
-    
-    private let baseAPI = "https://api.songkick.com/api/3.0/search/artists.json?"
-    private let apiKey = "io09K9l3ebJxmxe2&query"
 
-    func searchSinger(withName name: String, completion: @escaping (SingerSearch) -> (), failure: ((_ error: Error) -> Void)?) {
-        let apiString = "\(baseAPI)apikey=\(apiKey)&query=\(name)"
+    func searchSinger(withName name: String, page: Int, completion: @escaping (SingerSearch) -> (), failure: @escaping ((_ error: Error) -> Void)) {
+        let apiString = "\(Constants.baseAPI)\(Constants.artistSearch)apikey=\(Constants.apiKey)&query=\(name)&page=\(page)"
         let searchString = apiString.replacingOccurrences(of: " ", with: "+")
         DemoNetwork.shared.requestSingerData(request: searchString) { result in
             switch result {
@@ -22,7 +19,20 @@ class DataManager {
                 completion(result)
             case .failure(let error):
                 print("Error 1: \(error.localizedDescription)")
-                failure!(error)
+                failure(error)
+            }
+        }
+    }
+    
+    func showEventsForArtist(withMbid mbid: String, page: Int, completion: @escaping(Events) -> (), failure: @escaping ((_ error: Error) -> Void)) {
+        let apiString = Constants.baseAPI + Constants.eventForArtistAPI + mbid + "/calendar.json?" + "apikey=\(Constants.apiKey)" + "&page=\(page)"
+        DemoNetwork.shared.requestEventsData(request: apiString) { result in
+            switch result {
+            case .success(let result):
+                completion(result)
+            case .failure(let error):
+                print("Error load events: \(error.localizedDescription)")
+                failure(error)
             }
         }
     }

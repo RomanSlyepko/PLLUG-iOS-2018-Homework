@@ -29,6 +29,7 @@ class SingerDetailViewController: UIViewController {
         super.viewDidLoad()
 
         nameLabel.text = singer.displayName
+        navigationItem.title = singer.displayName
         idLabel.text = "id: " + String(singer.id)
         tourLabel.text = singer.onTourUntil != nil ? "On tour until \(String(describing: singer.onTourUntil!))" : "Not currently on tour"
         
@@ -45,11 +46,15 @@ class SingerDetailViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let eventVC = segue.destination as? EventListViewController
+        eventVC?.artist = singer
+    }
+    
     func showAlert(withTitle title: AlertParam, andMessage message: AlertParam) {
         let alert = UIAlertController(title: title.rawValue, message: message.rawValue, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
-    
 }

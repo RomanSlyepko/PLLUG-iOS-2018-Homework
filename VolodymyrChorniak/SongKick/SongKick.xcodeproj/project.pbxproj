@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		93F1CB25F713F14DCC62C9A0 /* Pods_SongKick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA97034AA5EEAB9BAB0E91A /* Pods_SongKick.framework */; };
+		CE1354B121D0D4FD00657283 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1354B021D0D4FD00657283 /* EventListViewController.swift */; };
+		CE1354B321D0D56800657283 /* DemoNetwork+EventsForArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1354B221D0D56800657283 /* DemoNetwork+EventsForArtist.swift */; };
+		CE1354B521D0D7DF00657283 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1354B421D0D7DF00657283 /* Events.swift */; };
+		CE1354B721D0D96E00657283 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1354B621D0D96E00657283 /* Constants.swift */; };
+		CE1354B921D0FB2E00657283 /* EventLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1354B821D0FB2E00657283 /* EventLocationViewController.swift */; };
+		CE1354BD21D1149C00657283 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1354BC21D1149C00657283 /* MapKit.framework */; };
+		CE1354BF21D117D200657283 /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1354BE21D117D200657283 /* EventAnnotation.swift */; };
+		CE1354C121D11C1C00657283 /* AllEventsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1354C021D11C1C00657283 /* AllEventsMapViewController.swift */; };
 		CE8C808A21BA864E0080766D /* ResultsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C808921BA864E0080766D /* ResultsPage.swift */; };
 		CE8C808C21BA86690080766D /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C808B21BA86690080766D /* Results.swift */; };
 		CE8C808E21BA868F0080766D /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C808D21BA868F0080766D /* Artist.swift */; };
@@ -26,12 +34,31 @@
 		CED7328121B97FC300D23C79 /* SingerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED7328021B97FC300D23C79 /* SingerDetailViewController.swift */; };
 		CED7328321B98D4900D23C79 /* FavoritesSingersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED7328221B98D4900D23C79 /* FavoritesSingersList.swift */; };
 		CED7328521B98E4200D23C79 /* FavoriteSignerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED7328421B98E4200D23C79 /* FavoriteSignerTableViewCell.swift */; };
+		CEF3AA2E21D2DCD000DA247C /* ResultPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3AA2D21D2DCD000DA247C /* ResultPage.swift */; };
+		CEF3AA3021D2DCE200DA247C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3AA2F21D2DCE200DA247C /* Result.swift */; };
+		CEF3AA3221D2DD0100DA247C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3AA3121D2DD0100DA247C /* Event.swift */; };
+		CEF3AA3421D2DD2600DA247C /* End.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3AA3321D2DD2600DA247C /* End.swift */; };
+		CEF3AA3621D2DD3B00DA247C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3AA3521D2DD3B00DA247C /* Location.swift */; };
+		CEF3AA3821D2DD5000DA247C /* Performance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3AA3721D2DD5000DA247C /* Performance.swift */; };
+		CEF3AA3B21D2DD7800DA247C /* Billing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3AA3A21D2DD7800DA247C /* Billing.swift */; };
+		CEF3AA3D21D2DD8F00DA247C /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3AA3C21D2DD8F00DA247C /* Series.swift */; };
+		CEF3AA3F21D2DDB600DA247C /* TypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3AA3E21D2DDB600DA247C /* TypeEnum.swift */; };
+		CEF3AA4121D2DDCA00DA247C /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3AA4021D2DDCA00DA247C /* Venue.swift */; };
+		CEF3AA4321D2DDEE00DA247C /* MetroArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3AA4221D2DDEE00DA247C /* MetroArea.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9CA97034AA5EEAB9BAB0E91A /* Pods_SongKick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SongKick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC74A04F8A6580F8700598A5 /* Pods-SongKick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongKick.release.xcconfig"; path = "Pods/Target Support Files/Pods-SongKick/Pods-SongKick.release.xcconfig"; sourceTree = "<group>"; };
 		C3EF10E0CE9354D00D07FBB9 /* Pods-SongKick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongKick.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SongKick/Pods-SongKick.debug.xcconfig"; sourceTree = "<group>"; };
+		CE1354B021D0D4FD00657283 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
+		CE1354B221D0D56800657283 /* DemoNetwork+EventsForArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DemoNetwork+EventsForArtist.swift"; sourceTree = "<group>"; };
+		CE1354B421D0D7DF00657283 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		CE1354B621D0D96E00657283 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CE1354B821D0FB2E00657283 /* EventLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLocationViewController.swift; sourceTree = "<group>"; };
+		CE1354BC21D1149C00657283 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CE1354BE21D117D200657283 /* EventAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
+		CE1354C021D11C1C00657283 /* AllEventsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsMapViewController.swift; sourceTree = "<group>"; };
 		CE8C808921BA864E0080766D /* ResultsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPage.swift; sourceTree = "<group>"; };
 		CE8C808B21BA86690080766D /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		CE8C808D21BA868F0080766D /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
@@ -52,6 +79,17 @@
 		CED7328021B97FC300D23C79 /* SingerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingerDetailViewController.swift; sourceTree = "<group>"; };
 		CED7328221B98D4900D23C79 /* FavoritesSingersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSingersList.swift; sourceTree = "<group>"; };
 		CED7328421B98E4200D23C79 /* FavoriteSignerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSignerTableViewCell.swift; sourceTree = "<group>"; };
+		CEF3AA2D21D2DCD000DA247C /* ResultPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPage.swift; sourceTree = "<group>"; };
+		CEF3AA2F21D2DCE200DA247C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		CEF3AA3121D2DD0100DA247C /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		CEF3AA3321D2DD2600DA247C /* End.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = End.swift; sourceTree = "<group>"; };
+		CEF3AA3521D2DD3B00DA247C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		CEF3AA3721D2DD5000DA247C /* Performance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Performance.swift; sourceTree = "<group>"; };
+		CEF3AA3A21D2DD7800DA247C /* Billing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Billing.swift; sourceTree = "<group>"; };
+		CEF3AA3C21D2DD8F00DA247C /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
+		CEF3AA3E21D2DDB600DA247C /* TypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeEnum.swift; sourceTree = "<group>"; };
+		CEF3AA4021D2DDCA00DA247C /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		CEF3AA4221D2DDEE00DA247C /* MetroArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroArea.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1354BD21D1149C00657283 /* MapKit.framework in Frameworks */,
 				93F1CB25F713F14DCC62C9A0 /* Pods_SongKick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				CED7327A21B969A000D23C79 /* DemoNetwork+SearchSinger.swift */,
+				CE1354B221D0D56800657283 /* DemoNetwork+EventsForArtist.swift */,
 				CED7327821B9688E00D23C79 /* DemoNetwork.swift */,
 			);
 			path = Network;
@@ -92,6 +132,18 @@
 				CE8C808B21BA86690080766D /* Results.swift */,
 				CE8C808D21BA868F0080766D /* Artist.swift */,
 				CE8C808F21BA86A30080766D /* Identifier.swift */,
+				CE1354B421D0D7DF00657283 /* Events.swift */,
+				CEF3AA2D21D2DCD000DA247C /* ResultPage.swift */,
+				CEF3AA2F21D2DCE200DA247C /* Result.swift */,
+				CEF3AA3121D2DD0100DA247C /* Event.swift */,
+				CEF3AA3321D2DD2600DA247C /* End.swift */,
+				CEF3AA3521D2DD3B00DA247C /* Location.swift */,
+				CEF3AA3721D2DD5000DA247C /* Performance.swift */,
+				CEF3AA3A21D2DD7800DA247C /* Billing.swift */,
+				CEF3AA3C21D2DD8F00DA247C /* Series.swift */,
+				CEF3AA3E21D2DDB600DA247C /* TypeEnum.swift */,
+				CEF3AA4021D2DDCA00DA247C /* Venue.swift */,
+				CEF3AA4221D2DDEE00DA247C /* MetroArea.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -102,6 +154,9 @@
 				CED7326621B9578200D23C79 /* FavoritesViewController.swift */,
 				CED7326421B9578200D23C79 /* SearchViewController.swift */,
 				CED7328021B97FC300D23C79 /* SingerDetailViewController.swift */,
+				CE1354B021D0D4FD00657283 /* EventListViewController.swift */,
+				CE1354B821D0FB2E00657283 /* EventLocationViewController.swift */,
+				CE1354C021D11C1C00657283 /* AllEventsMapViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -149,6 +204,8 @@
 				CED7326221B9578200D23C79 /* AppDelegate.swift */,
 				CED7327C21B969C600D23C79 /* DataManager.swift */,
 				CED7328221B98D4900D23C79 /* FavoritesSingersList.swift */,
+				CE1354B621D0D96E00657283 /* Constants.swift */,
+				CE1354BE21D117D200657283 /* EventAnnotation.swift */,
 				CE8C809121BA86E20080766D /* ViewControllers */,
 				CEA3F64921BC2CCD00B79C07 /* Cell */,
 				CE8C808721BA861D0080766D /* Models */,
@@ -162,6 +219,7 @@
 		DE38077F67F9737940BA2FAB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE1354BC21D1149C00657283 /* MapKit.framework */,
 				9CA97034AA5EEAB9BAB0E91A /* Pods_SongKick.framework */,
 			);
 			name = Frameworks;
@@ -201,6 +259,11 @@
 				TargetAttributes = {
 					CED7325E21B9578200D23C79 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -288,20 +351,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED7326721B9578200D23C79 /* FavoritesViewController.swift in Sources */,
+				CE1354B721D0D96E00657283 /* Constants.swift in Sources */,
+				CE1354C121D11C1C00657283 /* AllEventsMapViewController.swift in Sources */,
+				CEF3AA3B21D2DD7800DA247C /* Billing.swift in Sources */,
+				CEF3AA2E21D2DCD000DA247C /* ResultPage.swift in Sources */,
 				CE8C809021BA86A30080766D /* Identifier.swift in Sources */,
 				CED7328121B97FC300D23C79 /* SingerDetailViewController.swift in Sources */,
+				CEF3AA3021D2DCE200DA247C /* Result.swift in Sources */,
 				CED7327921B9688E00D23C79 /* DemoNetwork.swift in Sources */,
+				CEF3AA4121D2DDCA00DA247C /* Venue.swift in Sources */,
 				CED7328321B98D4900D23C79 /* FavoritesSingersList.swift in Sources */,
+				CEF3AA3421D2DD2600DA247C /* End.swift in Sources */,
+				CE1354B121D0D4FD00657283 /* EventListViewController.swift in Sources */,
+				CEF3AA3821D2DD5000DA247C /* Performance.swift in Sources */,
+				CE1354B521D0D7DF00657283 /* Events.swift in Sources */,
+				CE1354BF21D117D200657283 /* EventAnnotation.swift in Sources */,
+				CEF3AA3621D2DD3B00DA247C /* Location.swift in Sources */,
+				CE1354B321D0D56800657283 /* DemoNetwork+EventsForArtist.swift in Sources */,
 				CED7328521B98E4200D23C79 /* FavoriteSignerTableViewCell.swift in Sources */,
 				CED7326321B9578200D23C79 /* AppDelegate.swift in Sources */,
+				CEF3AA3F21D2DDB600DA247C /* TypeEnum.swift in Sources */,
 				CE8C808E21BA868F0080766D /* Artist.swift in Sources */,
 				CED7327D21B969C600D23C79 /* DataManager.swift in Sources */,
 				CE8C808A21BA864E0080766D /* ResultsPage.swift in Sources */,
 				CED7327F21B9738700D23C79 /* SearchingSingerTableViewCell.swift in Sources */,
 				CE8C808C21BA86690080766D /* Results.swift in Sources */,
+				CEF3AA3D21D2DD8F00DA247C /* Series.swift in Sources */,
 				CED7327B21B969A000D23C79 /* DemoNetwork+SearchSinger.swift in Sources */,
 				CED7326521B9578200D23C79 /* SearchViewController.swift in Sources */,
+				CE1354B921D0FB2E00657283 /* EventLocationViewController.swift in Sources */,
 				CED7327721B9683B00D23C79 /* SingerSearch.swift in Sources */,
+				CEF3AA4321D2DDEE00DA247C /* MetroArea.swift in Sources */,
+				CEF3AA3221D2DD0100DA247C /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,7 +532,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2BGX5BR6RB;
 				INFOPLIST_FILE = SongKick/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -471,7 +552,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2BGX5BR6RB;
 				INFOPLIST_FILE = SongKick/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
