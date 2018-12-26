@@ -12,6 +12,7 @@ class FavoutireArtistViewController: UIViewController {
 
     //MARK: - ui elements
     @IBOutlet weak var favouriteArtistsTableView: UITableView!
+    var artistToPass: Artist?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,6 @@ class FavoutireArtistViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.favouriteArtistsTableView.reloadData()
     }
     
@@ -45,6 +45,15 @@ class FavoutireArtistViewController: UIViewController {
         
         return action
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.showInfo.rawValue {
+            guard let vc = segue.destination as? ArtistInfoViewController else { return }
+            vc.artist = self.artistToPass
+        }
+        
+    }
+    
 }
 
 // MARK: - UITableViewDataSource
@@ -61,9 +70,6 @@ extension FavoutireArtistViewController: UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
 }
 
 // MARK: - UITableViewDelegate
@@ -72,6 +78,12 @@ extension FavoutireArtistViewController: UITableViewDelegate {
         let delete = deleteAction(at: indexPath)
         
         return UISwipeActionsConfiguration(actions: [delete])
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.artistToPass = DataStorager.shared.artists[indexPath.row]
+        
+        performSegue(withIdentifier: Segues.showInfo.rawValue, sender: self)
     }
 }
 

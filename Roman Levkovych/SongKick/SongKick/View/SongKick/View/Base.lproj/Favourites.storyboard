@@ -19,26 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DKA-xQ-hpb">
-                                <rect key="frame" x="0.0" y="92" width="375" height="575"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <sections/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourites" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pze-Xj-GNg">
-                                <rect key="frame" x="0.0" y="64" width="375" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="bE1-Cc-FuX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="kEn-Qd-igx" firstAttribute="trailing" secondItem="Pze-Xj-GNg" secondAttribute="trailing" id="IIK-xm-nG2"/>
-                            <constraint firstItem="Pze-Xj-GNg" firstAttribute="top" secondItem="kEn-Qd-igx" secondAttribute="top" id="NPX-aH-t3j"/>
-                            <constraint firstItem="Pze-Xj-GNg" firstAttribute="leading" secondItem="kEn-Qd-igx" secondAttribute="leading" id="o1O-de-4nM"/>
-                            <constraint firstItem="DKA-xQ-hpb" firstAttribute="top" secondItem="Pze-Xj-GNg" secondAttribute="bottom" id="ob2-bo-cZR"/>
+                            <constraint firstItem="DKA-xQ-hpb" firstAttribute="top" secondItem="kEn-Qd-igx" secondAttribute="top" id="ghJ-Nu-332"/>
                             <constraint firstItem="DKA-xQ-hpb" firstAttribute="bottom" secondItem="kEn-Qd-igx" secondAttribute="bottom" id="rbQ-9c-iR4"/>
                             <constraint firstItem="DKA-xQ-hpb" firstAttribute="leading" secondItem="kEn-Qd-igx" secondAttribute="leading" id="ujJ-VS-yDe"/>
                             <constraint firstItem="DKA-xQ-hpb" firstAttribute="trailing" secondItem="kEn-Qd-igx" secondAttribute="trailing" id="urk-Cj-WMq"/>
@@ -48,7 +36,7 @@
                     <navigationItem key="navigationItem" title="Favourites" id="cyd-5E-AkT"/>
                     <connections>
                         <outlet property="favouriteArtistsTableView" destination="DKA-xQ-hpb" id="MFN-d1-ZVq"/>
-                        <segue destination="gQJ-Ru-bfb" kind="show" id="Izx-Pr-EIe"/>
+                        <segue destination="gQJ-Ru-bfb" kind="show" identifier="showInfo" id="Izx-Pr-EIe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Axy-ux-Hsj" userLabel="First Responder" sceneMemberID="firstResponder"/>

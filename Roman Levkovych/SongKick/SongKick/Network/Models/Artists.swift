@@ -12,11 +12,13 @@ struct Artist: Codable {
     var id : Int?
     var name : String?
     var url : String?
+    var onTourUntil: String?
     
     enum CodingKeys: String, CodingKey {
-        case id = "id"
+        case id
         case name = "displayName"
         case url = "uri"
+        case onTourUntil
     }
     
 }

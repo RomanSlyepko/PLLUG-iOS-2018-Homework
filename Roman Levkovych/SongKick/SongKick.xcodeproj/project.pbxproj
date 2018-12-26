@@ -27,6 +27,8 @@
 		30DA978621D2702B00971DD2 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30DA978521D2702B00971DD2 /* Search.storyboard */; };
 		30DA978821D28D4600971DD2 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA978721D28D4500971DD2 /* APIRouter.swift */; };
 		30DA978A21D2911600971DD2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA978921D2911600971DD2 /* NetworkManager.swift */; };
+		30DA978D21D2B9E100971DD2 /* ConcertLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA978B21D2B9E100971DD2 /* ConcertLocationTableViewCell.swift */; };
+		30DA978E21D2B9E100971DD2 /* ConcertLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30DA978C21D2B9E100971DD2 /* ConcertLocationTableViewCell.xib */; };
 		30EFAFF721BEF1140008E895 /* DataStorager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EFAFF621BEF1140008E895 /* DataStorager.swift */; };
 		30EFAFFA21BF12AB0008E895 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EFAFF921BF12AB0008E895 /* Alert.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +56,8 @@
 		30DA978521D2702B00971DD2 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		30DA978721D28D4500971DD2 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		30DA978921D2911600971DD2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		30DA978B21D2B9E100971DD2 /* ConcertLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcertLocationTableViewCell.swift; sourceTree = "<group>"; };
+		30DA978C21D2B9E100971DD2 /* ConcertLocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConcertLocationTableViewCell.xib; sourceTree = "<group>"; };
 		30EFAFF621BEF1140008E895 /* DataStorager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorager.swift; sourceTree = "<group>"; };
 		30EFAFF921BF12AB0008E895 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +100,8 @@
 			children = (
 				301AAA8121BECFC500539CDD /* ArtistTableViewCell.swift */,
 				301AAA8221BECFC500539CDD /* ArtistTableViewCell.xib */,
+				30DA978B21D2B9E100971DD2 /* ConcertLocationTableViewCell.swift */,
+				30DA978C21D2B9E100971DD2 /* ConcertLocationTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -219,6 +225,7 @@
 				30922FB321B9513900DF619F /* Assets.xcassets in Resources */,
 				30DA978621D2702B00971DD2 /* Search.storyboard in Resources */,
 				301AAA8421BECFC500539CDD /* ArtistTableViewCell.xib in Resources */,
+				30DA978E21D2B9E100971DD2 /* ConcertLocationTableViewCell.xib in Resources */,
 				30922FB121B9513600DF619F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,6 +240,7 @@
 				30EFAFF721BEF1140008E895 /* DataStorager.swift in Sources */,
 				301AAA8021BDB21300539CDD /* SearchArtistViewController.swift in Sources */,
 				30922FAE21B9513600DF619F /* FavouriteArtistViewController.swift in Sources */,
+				30DA978D21D2B9E100971DD2 /* ConcertLocationTableViewCell.swift in Sources */,
 				301AAA6D21BBE61D00539CDD /* Response.swift in Sources */,
 				301AAA7521BD1AE300539CDD /* Artists.swift in Sources */,
 				301AAA8321BECFC500539CDD /* ArtistTableViewCell.swift in Sources */,

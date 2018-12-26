@@ -17,6 +17,7 @@ class SearchArtistViewController: UIViewController {
 
     @IBOutlet weak var searchArtistSearchBar: UISearchBar!
     @IBOutlet weak var foundArtistsTableView: UITableView!
+    private var artistToPass: Artist?
     
     fileprivate func reloadTableView() {
         self.foundArtistsTableView.reloadData()
@@ -27,6 +28,7 @@ class SearchArtistViewController: UIViewController {
         
         configureDelegates()
         registerNib()
+        
     }
     
     fileprivate func configureDelegates() {
@@ -39,6 +41,7 @@ class SearchArtistViewController: UIViewController {
     fileprivate func registerNib() {
         let nib = UINib(nibName: ArtistTableViewCell.identifier, bundle: nil)
         self.foundArtistsTableView.register(nib, forCellReuseIdentifier: ArtistTableViewCell.identifier)
+        
     }
     
     func save(results: Results) {
@@ -74,6 +77,14 @@ class SearchArtistViewController: UIViewController {
         return action
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.showInfo.rawValue {
+            guard let vc = segue.destination as? ArtistInfoViewController else { return }
+            vc.artist = self.artistToPass
+        }
+        
+    }
+    
 }
 
 // MARK: - UITableViewDataSource
@@ -100,6 +111,12 @@ extension SearchArtistViewController: UITableViewDelegate {
         
         return UISwipeActionsConfiguration(actions: [favourite])
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.artistToPass = DataStorager.shared.artists[indexPath.row]
+        
+        performSegue(withIdentifier: Segues.showInfo.rawValue, sender: self)
+    }
 }
 
 //MARK: - UISearchBarDelegate
@@ -118,7 +135,5 @@ extension SearchArtistViewController: UISearchBarDelegate {
         self.search(for: artistSearch)
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Segues.showInfo.rawValue, sender: self)
-    }
+   
 }

@@ -15,4 +15,5 @@ class DataStorager {
     
     var artists = [Artist]()
     var favouriteArtists = [Artist]()
+    var artistEvents = [Event]()
 }

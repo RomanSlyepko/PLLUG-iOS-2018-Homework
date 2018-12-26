@@ -33,9 +33,8 @@
         <!--Navigation Controller-->
         <scene sceneID="G2g-kl-v8u">
             <objects>
-                <navigationController id="3Zm-V2-87Q" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UqU-HU-WBr">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                <navigationController navigationBarHidden="YES" id="3Zm-V2-87Q" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="UqU-HU-WBr">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

@@ -19,31 +19,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pgD-cP-sCx">
-                                <rect key="frame" x="0.0" y="149" width="375" height="518"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnE-QM-xPu">
-                                <rect key="frame" x="0.0" y="64" width="375" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <searchBar contentMode="redraw" placeholder="Search..." translatesAutoresizingMaskIntoConstraints="NO" id="yfM-KU-Obm">
-                                <rect key="frame" x="0.0" y="93" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="AnE-QM-xPu" firstAttribute="top" secondItem="TWx-IL-NF3" secondAttribute="top" id="2dc-7k-XIS"/>
                             <constraint firstItem="yfM-KU-Obm" firstAttribute="trailing" secondItem="TWx-IL-NF3" secondAttribute="trailing" id="8bW-7f-goK"/>
                             <constraint firstItem="pgD-cP-sCx" firstAttribute="top" secondItem="yfM-KU-Obm" secondAttribute="bottom" id="AJB-yt-6Oa"/>
                             <constraint firstItem="yfM-KU-Obm" firstAttribute="leading" secondItem="TWx-IL-NF3" secondAttribute="leading" id="G2U-Ye-WyR"/>
-                            <constraint firstItem="AnE-QM-xPu" firstAttribute="leading" secondItem="TWx-IL-NF3" secondAttribute="leading" id="MTJ-dO-Km4"/>
-                            <constraint firstItem="yfM-KU-Obm" firstAttribute="top" secondItem="AnE-QM-xPu" secondAttribute="bottom" id="hS1-0y-NYv"/>
+                            <constraint firstItem="yfM-KU-Obm" firstAttribute="top" secondItem="TWx-IL-NF3" secondAttribute="top" id="L2f-LM-jJF"/>
                             <constraint firstItem="pgD-cP-sCx" firstAttribute="bottom" secondItem="TWx-IL-NF3" secondAttribute="bottom" id="ikN-UZ-RUH"/>
                             <constraint firstItem="pgD-cP-sCx" firstAttribute="trailing" secondItem="TWx-IL-NF3" secondAttribute="trailing" id="xzT-pg-4ur"/>
-                            <constraint firstItem="TWx-IL-NF3" firstAttribute="trailing" secondItem="AnE-QM-xPu" secondAttribute="trailing" id="ygg-cW-G9l"/>
                             <constraint firstItem="pgD-cP-sCx" firstAttribute="leading" secondItem="TWx-IL-NF3" secondAttribute="leading" id="ylJ-oP-SLe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TWx-IL-NF3"/>
