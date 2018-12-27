@@ -29,6 +29,7 @@ struct Event: Codable {
         case id
         case name = "displayName"
         case type
+        case location
     }
 }
 

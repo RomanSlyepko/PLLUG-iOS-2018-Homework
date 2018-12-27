@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gQJ-Ru-bfb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Artist Info View Controller-->
+        <scene sceneID="vxE-3o-xpc">
+            <objects>
+                <viewController id="gQJ-Ru-bfb" customClass="ArtistInfoViewController" customModule="SongKick" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="3hU-Dk-vSE" kind="show" identifier="showLocation" id="h4I-vz-dWP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4E-Le-Ik1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3814" y="126"/>
+        </scene>
+        <!--Location View Controller-->
+        <scene sceneID="qgz-Gs-1AI">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NTw-gI-NFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="3hU-Dk-vSE" customClass="LocationViewController" customModule="SongKick" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a1M-Ws-QM1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="X1K-JK-19G">
+                                <rect key="frame" x="0.0" y="53.5" width="375" height="613.5"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Concert name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptO-82-kLJ">
+                                <rect key="frame" x="4" y="24" width="367" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ptO-82-kLJ" firstAttribute="top" secondItem="KFR-oO-F6n" secondAttribute="top" constant="4" id="8oD-nS-5hK"/>
+                            <constraint firstItem="X1K-JK-19G" firstAttribute="trailing" secondItem="KFR-oO-F6n" secondAttribute="trailing" id="EcR-s1-9NO"/>
+                            <constraint firstItem="X1K-JK-19G" firstAttribute="bottom" secondItem="KFR-oO-F6n" secondAttribute="bottom" id="XGo-8h-GaY"/>
+                            <constraint firstItem="ptO-82-kLJ" firstAttribute="leading" secondItem="KFR-oO-F6n" secondAttribute="leading" constant="4" id="cTw-HI-8uz"/>
+                            <constraint firstItem="KFR-oO-F6n" firstAttribute="trailing" secondItem="ptO-82-kLJ" secondAttribute="trailing" constant="4" id="ji0-Tk-Crl"/>
+                            <constraint firstItem="X1K-JK-19G" firstAttribute="top" secondItem="ptO-82-kLJ" secondAttribute="bottom" constant="4" id="lgG-il-GnQ"/>
+                            <constraint firstItem="X1K-JK-19G" firstAttribute="leading" secondItem="KFR-oO-F6n" secondAttribute="leading" id="ooz-bl-r7v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KFR-oO-F6n"/>
+                    </view>
+                    <connections>
+                        <outlet property="concertLocationMapView" destination="X1K-JK-19G" id="NRD-bs-EUw"/>
+                        <outlet property="concertNameLabel" destination="ptO-82-kLJ" id="rXW-EJ-lty"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="4656.8000000000002" y="124.58770614692655"/>
+        </scene>
+    </scenes>
+</document>

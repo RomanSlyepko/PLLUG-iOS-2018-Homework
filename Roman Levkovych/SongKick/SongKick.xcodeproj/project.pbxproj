@@ -15,6 +15,9 @@
 		301AAA8021BDB21300539CDD /* SearchArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301AAA7F21BDB21300539CDD /* SearchArtistViewController.swift */; };
 		301AAA8321BECFC500539CDD /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301AAA8121BECFC500539CDD /* ArtistTableViewCell.swift */; };
 		301AAA8421BECFC500539CDD /* ArtistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 301AAA8221BECFC500539CDD /* ArtistTableViewCell.xib */; };
+		305FDF9C21D4D997005036EF /* ArtistInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305FDF9A21D4D997005036EF /* ArtistInfo.storyboard */; };
+		305FDF9F21D4E458005036EF /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FDF9E21D4E458005036EF /* Segues.swift */; };
+		305FDFA121D4E4FD005036EF /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FDFA021D4E4FD005036EF /* LocationViewController.swift */; };
 		30922FAC21B9513600DF619F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30922FAB21B9513600DF619F /* AppDelegate.swift */; };
 		30922FAE21B9513600DF619F /* FavouriteArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30922FAD21B9513600DF619F /* FavouriteArtistViewController.swift */; };
 		30922FB121B9513600DF619F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30922FAF21B9513600DF619F /* Main.storyboard */; };
@@ -42,6 +45,9 @@
 		301AAA7F21BDB21300539CDD /* SearchArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchArtistViewController.swift; sourceTree = "<group>"; };
 		301AAA8121BECFC500539CDD /* ArtistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistTableViewCell.swift; sourceTree = "<group>"; };
 		301AAA8221BECFC500539CDD /* ArtistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistTableViewCell.xib; sourceTree = "<group>"; };
+		305FDF9B21D4D997005036EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SongKick/View/SongKick/View/Base.lproj/ArtistInfo.storyboard; sourceTree = "<group>"; };
+		305FDF9E21D4E458005036EF /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
+		305FDFA021D4E4FD005036EF /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		30922FA821B9513600DF619F /* SongKick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongKick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30922FAB21B9513600DF619F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30922FAD21B9513600DF619F /* FavouriteArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteArtistViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +96,8 @@
 				30922FAD21B9513600DF619F /* FavouriteArtistViewController.swift */,
 				301AAA7F21BDB21300539CDD /* SearchArtistViewController.swift */,
 				30DA975E21D1592D00971DD2 /* ArtistInfoViewController.swift */,
+				305FDF9E21D4E458005036EF /* Segues.swift */,
+				305FDFA021D4E4FD005036EF /* LocationViewController.swift */,
 				30DA975F21D1592D00971DD2 /* ArtistInfoViewController.xib */,
 			);
 			path = Controllers;
@@ -104,6 +112,17 @@
 				30DA978C21D2B9E100971DD2 /* ConcertLocationTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		305FDF9D21D4D9B0005036EF /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				30922FAF21B9513600DF619F /* Main.storyboard */,
+				30DA978521D2702B00971DD2 /* Search.storyboard */,
+				305FDF9A21D4D997005036EF /* ArtistInfo.storyboard */,
+				30DA978221D2700A00971DD2 /* Favourites.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		30922F9F21B9513600DF619F = {
@@ -140,9 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				301AAA7E21BDB1D400539CDD /* Controllers */,
-				30922FAF21B9513600DF619F /* Main.storyboard */,
-				30DA978521D2702B00971DD2 /* Search.storyboard */,
-				30DA978221D2700A00971DD2 /* Favourites.storyboard */,
+				305FDF9D21D4D9B0005036EF /* Storyboard */,
 				301AAA8521BECFD800539CDD /* Cells */,
 				30EFAFF921BF12AB0008E895 /* Alert.swift */,
 			);
@@ -225,6 +242,7 @@
 				30922FB321B9513900DF619F /* Assets.xcassets in Resources */,
 				30DA978621D2702B00971DD2 /* Search.storyboard in Resources */,
 				301AAA8421BECFC500539CDD /* ArtistTableViewCell.xib in Resources */,
+				305FDF9C21D4D997005036EF /* ArtistInfo.storyboard in Resources */,
 				30DA978E21D2B9E100971DD2 /* ConcertLocationTableViewCell.xib in Resources */,
 				30922FB121B9513600DF619F /* Main.storyboard in Resources */,
 			);
@@ -240,6 +258,7 @@
 				30EFAFF721BEF1140008E895 /* DataStorager.swift in Sources */,
 				301AAA8021BDB21300539CDD /* SearchArtistViewController.swift in Sources */,
 				30922FAE21B9513600DF619F /* FavouriteArtistViewController.swift in Sources */,
+				305FDF9F21D4E458005036EF /* Segues.swift in Sources */,
 				30DA978D21D2B9E100971DD2 /* ConcertLocationTableViewCell.swift in Sources */,
 				301AAA6D21BBE61D00539CDD /* Response.swift in Sources */,
 				301AAA7521BD1AE300539CDD /* Artists.swift in Sources */,
@@ -251,6 +270,7 @@
 				301AAA7821BD2AA300539CDD /* Network.swift in Sources */,
 				30BF32F321CFEF64005139AE /* Validation.swift in Sources */,
 				30DA978A21D2911600971DD2 /* NetworkManager.swift in Sources */,
+				305FDFA121D4E4FD005036EF /* LocationViewController.swift in Sources */,
 				30DA976021D1592D00971DD2 /* ArtistInfoViewController.swift in Sources */,
 				301AAA7321BD1AD000539CDD /* Results.swift in Sources */,
 			);
@@ -259,6 +279,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		305FDF9A21D4D997005036EF /* ArtistInfo.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				305FDF9B21D4D997005036EF /* Base */,
+			);
+			name = ArtistInfo.storyboard;
+			sourceTree = "<group>";
+		};
 		30922FAF21B9513600DF619F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

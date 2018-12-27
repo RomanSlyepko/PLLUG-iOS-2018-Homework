@@ -8,10 +8,6 @@
 
 import UIKit
 
-enum Segues: String {
-    case showInfo
-}
-
 
 class SearchArtistViewController: UIViewController {
 

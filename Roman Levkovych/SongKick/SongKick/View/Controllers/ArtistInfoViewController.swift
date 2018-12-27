@@ -14,6 +14,7 @@ class ArtistInfoViewController: UIViewController {
     @IBOutlet weak var dateUntilArtistOnTourLabel: UILabel!
     @IBOutlet weak var eventsTableView: UITableView!
     var artist: Artist?
+    var concert: Location?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +24,10 @@ class ArtistInfoViewController: UIViewController {
         self.registerCells()
         
         self.searchCalendar()
-        self.eventsTableView.rowHeight = UITableView.automaticDimension
-        self.eventsTableView.estimatedRowHeight = 125
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         
     }
     
@@ -66,6 +64,15 @@ class ArtistInfoViewController: UIViewController {
         self.eventsTableView.dataSource = self
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case Segues.showLocation.rawValue:
+            guard let vc = segue.destination as? LocationViewController else { return }
+            vc.concert = self.concert
+        default:
+            return
+        }
+    }
 }
 
 // MARK: -UITableViewDataSource
@@ -85,9 +92,15 @@ extension ArtistInfoViewController: UITableViewDataSource {
     }
 }
 
+// MARK: -UITableViewDelegate
 extension ArtistInfoViewController: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.concert = DataStorager.shared.artistEvents[indexPath.row].location
+
+        performSegue(withIdentifier: Segues.showLocation.rawValue, sender: self)
     }
 }

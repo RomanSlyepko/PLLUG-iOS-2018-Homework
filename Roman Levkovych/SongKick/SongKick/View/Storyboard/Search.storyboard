@@ -39,24 +39,24 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TWx-IL-NF3"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Search" leftItemsSupplementBackButton="YES" id="uOS-v7-99z"/>
+                    <navigationItem key="navigationItem" title="Search" id="uOS-v7-99z"/>
                     <connections>
                         <outlet property="foundArtistsTableView" destination="pgD-cP-sCx" id="LGJ-a1-Ndo"/>
                         <outlet property="searchArtistSearchBar" destination="yfM-KU-Obm" id="jBr-6N-6mZ"/>
-                        <segue destination="KSz-xv-l1O" kind="show" identifier="showInfo" id="W63-Bo-6lK"/>
+                        <segue destination="ErB-dv-T2W" kind="show" identifier="showInfo" id="axB-Ma-kaZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pUN-Sw-BYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3024.8000000000002" y="1022.3388305847077"/>
         </scene>
-        <!--Artist Info View Controller-->
-        <scene sceneID="EVK-92-PUc">
+        <!--ArtistInfo-->
+        <scene sceneID="a0W-2f-7Ue">
             <objects>
-                <viewController id="KSz-xv-l1O" customClass="ArtistInfoViewController" customModule="SongKick" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ObJ-iF-Ft5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="ArtistInfo" id="ErB-dv-T2W" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ij-tu-Yh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3900" y="1022"/>
+            <point key="canvasLocation" x="3848" y="1022"/>
         </scene>
         <!--Search-->
         <scene sceneID="ds9-t9-fAk">
