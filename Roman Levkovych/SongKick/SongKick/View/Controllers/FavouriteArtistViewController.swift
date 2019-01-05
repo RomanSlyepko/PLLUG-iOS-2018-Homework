@@ -10,8 +10,9 @@ import UIKit
 
 class FavoutireArtistViewController: UIViewController {
 
-    //MARK: - ui elements
+    //MARK: - Properties
     @IBOutlet weak var favouriteArtistsTableView: UITableView!
+    
     var artistToPass: Artist?
     
     override func viewDidLoad() {

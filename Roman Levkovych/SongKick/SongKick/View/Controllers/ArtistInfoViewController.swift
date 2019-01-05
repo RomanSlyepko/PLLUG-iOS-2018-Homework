@@ -9,15 +9,17 @@
 import UIKit
 
 class ArtistInfoViewController: UIViewController {
-    
+
+    //MARK: - Properties
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var dateUntilArtistOnTourLabel: UILabel!
     @IBOutlet weak var eventsTableView: UITableView!
     @IBOutlet weak var seeAllEventsButton: UIButton!
     @IBOutlet weak var onTourLabel: UILabel!
+
     var artist: Artist?
     private var events = [Event]()
-    var venue: [Venue?]?
+    private var venue: [Venue?]?
     
     override func viewDidLoad() {
         super.viewDidLoad()

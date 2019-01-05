@@ -11,8 +11,10 @@ import UIKit
 
 class SearchArtistViewController: UIViewController {
 
+    //MARK: - Properties
     @IBOutlet weak var searchArtistSearchBar: UISearchBar!
     @IBOutlet weak var foundArtistsTableView: UITableView!
+    
     private var artistToPass: Artist?
     
     fileprivate func reloadTableView() {
