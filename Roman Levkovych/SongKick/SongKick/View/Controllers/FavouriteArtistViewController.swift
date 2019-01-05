@@ -51,7 +51,7 @@ class FavoutireArtistViewController: UIViewController {
             guard let vc = segue.destination as? ArtistInfoViewController else { return }
             vc.artist = self.artistToPass
         }
-        
+
     }
     
 }
@@ -81,8 +81,8 @@ extension FavoutireArtistViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.artistToPass = DataStorager.shared.artists[indexPath.row]
-        
+        self.artistToPass = DataStorager.shared.favouriteArtists[indexPath.row]
+
         performSegue(withIdentifier: Segues.showInfo.rawValue, sender: self)
     }
 }

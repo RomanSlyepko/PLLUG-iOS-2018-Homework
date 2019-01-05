@@ -22,8 +22,8 @@
                         <color key="selectedImageTintColor" red="0.97254901960784312" green="0.0" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="gOV-QH-lgh" kind="relationship" relationship="viewControllers" id="XCo-pn-iu3"/>
                         <segue destination="LJZ-cA-O6j" kind="relationship" relationship="viewControllers" id="ats-Df-cIt"/>
+                        <segue destination="gOV-QH-lgh" kind="relationship" relationship="viewControllers" id="XCo-pn-iu3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o5l-aB-7hR" userLabel="First Responder" sceneMemberID="firstResponder"/>

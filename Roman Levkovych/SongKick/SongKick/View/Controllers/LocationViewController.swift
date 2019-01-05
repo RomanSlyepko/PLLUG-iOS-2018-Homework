@@ -11,26 +11,31 @@ import MapKit
 
 class LocationViewController: UIViewController {
 
-    @IBOutlet weak var concertNameLabel: UILabel!
     @IBOutlet weak var concertLocationMapView: MKMapView!
-    var concert: Location?
+    var venue: [Venue?]?
+    var annotation: [Annotation]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        self.concertNameLabel.text = concert?.city
-    }
-    
+        self.annotation = self.venue?.compactMap { Annotation(title: $0?.name ?? "",
+                                                             coordinate: CLLocationCoordinate2DMake($0?.latitude ?? 0,
+                                                                                                    $0?.longtitude ?? 0)) }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if self.annotation?.count ?? 0 > 1 || self.annotation?.count ?? 0 == 0 {
+            self.title = "Venues"
+        } else {
+            self.title = self.annotation?[0].title
+        }
+        let radius: CLLocationDistance = 1000
+        let coordinateRegion = MKCoordinateRegion(center: (self.annotation?[0].coordinate)!,
+                                                  latitudinalMeters: radius,
+                                                  longitudinalMeters: radius)
+        self.concertLocationMapView.setRegion(coordinateRegion, animated: true)
+        dump(self.annotation!)
+        self.annotation?.forEach {
+            self.concertLocationMapView.addAnnotation($0)
+        }
     }
-    */
 
 }

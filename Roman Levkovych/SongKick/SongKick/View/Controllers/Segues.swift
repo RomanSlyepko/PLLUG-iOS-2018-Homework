@@ -11,4 +11,5 @@ import Foundation
 enum Segues: String {
     case showInfo
     case showLocation
+    case showAllLocations
 }

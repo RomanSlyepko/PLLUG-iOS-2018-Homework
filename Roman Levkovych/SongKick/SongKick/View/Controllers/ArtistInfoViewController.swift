@@ -13,8 +13,11 @@ class ArtistInfoViewController: UIViewController {
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var dateUntilArtistOnTourLabel: UILabel!
     @IBOutlet weak var eventsTableView: UITableView!
+    @IBOutlet weak var seeAllEventsButton: UIButton!
+    @IBOutlet weak var onTourLabel: UILabel!
     var artist: Artist?
-    var concert: Location?
+    private var events = [Event]()
+    var venue: [Venue?]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +28,11 @@ class ArtistInfoViewController: UIViewController {
         
         self.searchCalendar()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
+        self.eventsTableView.reloadData()
     }
     
     fileprivate func searchCalendar() {
@@ -38,16 +42,15 @@ class ArtistInfoViewController: UIViewController {
             case .success(let result):
                 DispatchQueue.main.async {
                     guard let events = result.event else { return }
-                    DataStorager.shared.artistEvents = events
+                    self.events = events
                     self.eventsTableView.reloadData()
-                    print(DataStorager.shared.artistEvents)
                 }
             case .error(let err):
                 Alert.showErrorAlert(on: self, message: err.rawValue)
             }
         }
-        
     }
+
     
     fileprivate func initLabels() {
         self.artistNameLabel.text = self.artist?.name
@@ -64,11 +67,20 @@ class ArtistInfoViewController: UIViewController {
         self.eventsTableView.dataSource = self
     }
 
+    @IBAction func showAllVenues(_ sender: Any) {
+        if !self.events.isEmpty {
+             performSegue(withIdentifier: Segues.showAllLocations.rawValue, sender: self)
+        }
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case Segues.showLocation.rawValue:
             guard let vc = segue.destination as? LocationViewController else { return }
-            vc.concert = self.concert
+            vc.venue = self.venue
+        case Segues.showAllLocations.rawValue:
+            guard let vc = segue.destination as? LocationViewController else { return }
+            vc.venue = self.events.map { $0.venue }
         default:
             return
         }
@@ -78,13 +90,13 @@ class ArtistInfoViewController: UIViewController {
 // MARK: -UITableViewDataSource
 extension ArtistInfoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataStorager.shared.artistEvents.count
+        return self.events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.eventsTableView.dequeueReusableCell(withIdentifier: ConcertLocationTableViewCell.identifier) as! ConcertLocationTableViewCell
-        let event = DataStorager.shared.artistEvents[indexPath.row]
-        cell.concertDate.text = event.startData?.date
+        let event = self.events[indexPath.row]
+        cell.concertDate.text = event.startDate?.date
         cell.concertName.text = event.name
         cell.concertLocation.text = event.location?.city
         
@@ -99,7 +111,7 @@ extension ArtistInfoViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.concert = DataStorager.shared.artistEvents[indexPath.row].location
+        self.venue = [self.events[indexPath.row].venue]
 
         performSegue(withIdentifier: Segues.showLocation.rawValue, sender: self)
     }

@@ -18,6 +18,9 @@
 		305FDF9C21D4D997005036EF /* ArtistInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305FDF9A21D4D997005036EF /* ArtistInfo.storyboard */; };
 		305FDF9F21D4E458005036EF /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FDF9E21D4E458005036EF /* Segues.swift */; };
 		305FDFA121D4E4FD005036EF /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FDFA021D4E4FD005036EF /* LocationViewController.swift */; };
+		305FDFA321D5338A005036EF /* SKDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FDFA221D5338A005036EF /* SKDateFormatter.swift */; };
+		305FDFA521D53C7A005036EF /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FDFA421D53C7A005036EF /* Venue.swift */; };
+		305FDFA721D751BD005036EF /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FDFA621D751BD005036EF /* Annotation.swift */; };
 		30922FAC21B9513600DF619F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30922FAB21B9513600DF619F /* AppDelegate.swift */; };
 		30922FAE21B9513600DF619F /* FavouriteArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30922FAD21B9513600DF619F /* FavouriteArtistViewController.swift */; };
 		30922FB121B9513600DF619F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30922FAF21B9513600DF619F /* Main.storyboard */; };
@@ -48,6 +51,9 @@
 		305FDF9B21D4D997005036EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SongKick/View/SongKick/View/Base.lproj/ArtistInfo.storyboard; sourceTree = "<group>"; };
 		305FDF9E21D4E458005036EF /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		305FDFA021D4E4FD005036EF /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		305FDFA221D5338A005036EF /* SKDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKDateFormatter.swift; sourceTree = "<group>"; };
+		305FDFA421D53C7A005036EF /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		305FDFA621D751BD005036EF /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		30922FA821B9513600DF619F /* SongKick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongKick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30922FAB21B9513600DF619F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30922FAD21B9513600DF619F /* FavouriteArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteArtistViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +92,8 @@
 				301AAA7421BD1AE300539CDD /* Artists.swift */,
 				301AAA7221BD1AD000539CDD /* Results.swift */,
 				301AAA7021BD1AB100539CDD /* ResultsPage.swift */,
+				305FDFA421D53C7A005036EF /* Venue.swift */,
+				305FDFA621D751BD005036EF /* Annotation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -174,6 +182,7 @@
 				30DA978921D2911600971DD2 /* NetworkManager.swift */,
 				30DA978721D28D4500971DD2 /* APIRouter.swift */,
 				30BF32F221CFEF64005139AE /* Validation.swift */,
+				305FDFA221D5338A005036EF /* SKDateFormatter.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -256,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30EFAFF721BEF1140008E895 /* DataStorager.swift in Sources */,
+				305FDFA521D53C7A005036EF /* Venue.swift in Sources */,
 				301AAA8021BDB21300539CDD /* SearchArtistViewController.swift in Sources */,
 				30922FAE21B9513600DF619F /* FavouriteArtistViewController.swift in Sources */,
 				305FDF9F21D4E458005036EF /* Segues.swift in Sources */,
@@ -264,6 +274,7 @@
 				301AAA7521BD1AE300539CDD /* Artists.swift in Sources */,
 				301AAA8321BECFC500539CDD /* ArtistTableViewCell.swift in Sources */,
 				30922FAC21B9513600DF619F /* AppDelegate.swift in Sources */,
+				305FDFA321D5338A005036EF /* SKDateFormatter.swift in Sources */,
 				30DA978821D28D4600971DD2 /* APIRouter.swift in Sources */,
 				301AAA7121BD1AB100539CDD /* ResultsPage.swift in Sources */,
 				30EFAFFA21BF12AB0008E895 /* Alert.swift in Sources */,
@@ -272,6 +283,7 @@
 				30DA978A21D2911600971DD2 /* NetworkManager.swift in Sources */,
 				305FDFA121D4E4FD005036EF /* LocationViewController.swift in Sources */,
 				30DA976021D1592D00971DD2 /* ArtistInfoViewController.swift in Sources */,
+				305FDFA721D751BD005036EF /* Annotation.swift in Sources */,
 				301AAA7321BD1AD000539CDD /* Results.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

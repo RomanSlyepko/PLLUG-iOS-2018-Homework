@@ -15,6 +15,8 @@
                 <outlet property="artistNameLabel" destination="e4V-QA-GoS" id="OAZ-9H-mRx"/>
                 <outlet property="dateUntilArtistOnTourLabel" destination="v7m-aW-gXZ" id="Fo0-p2-P73"/>
                 <outlet property="eventsTableView" destination="eMe-1c-ruZ" id="Qtj-uU-eZi"/>
+                <outlet property="onTourLabel" destination="Hqc-LP-qlc" id="56d-28-cT2"/>
+                <outlet property="seeAllEventsButton" destination="QM2-lN-FLT" id="IET-pM-3LS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,13 +26,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4V-QA-GoS">
-                    <rect key="frame" x="16" y="36" width="343" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <rect key="frame" x="16" y="36" width="343" height="29"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On tour until:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hqc-LP-qlc">
-                    <rect key="frame" x="16" y="96.5" width="100" height="21"/>
+                    <rect key="frame" x="16" y="105" width="100" height="32"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="6l3-tV-FDs"/>
                     </constraints>
@@ -39,24 +41,35 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7m-aW-gXZ">
-                    <rect key="frame" x="124" y="96.5" width="36" height="21"/>
+                    <rect key="frame" x="124" y="105" width="36" height="32"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eMe-1c-ruZ">
-                    <rect key="frame" x="16" y="133.5" width="343" height="517.5"/>
+                    <rect key="frame" x="16" y="153" width="343" height="498"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                     <sections/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM2-lN-FLT">
+                    <rect key="frame" x="294" y="105" width="65" height="32"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="  See all  "/>
+                    <connections>
+                        <action selector="showAllVenues:" destination="-1" eventType="touchUpInside" id="W7b-lF-1AD"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="eMe-1c-ruZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="2eM-Z9-cub"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eMe-1c-ruZ" secondAttribute="trailing" constant="16" id="3ki-eP-tTW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eMe-1c-ruZ" secondAttribute="bottom" constant="16" id="4Px-2A-Zfe"/>
+                <constraint firstItem="QM2-lN-FLT" firstAttribute="bottom" secondItem="v7m-aW-gXZ" secondAttribute="bottom" id="7VU-xp-LdS"/>
                 <constraint firstItem="v7m-aW-gXZ" firstAttribute="height" secondItem="Hqc-LP-qlc" secondAttribute="height" id="Ftt-tY-8Nw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="e4V-QA-GoS" secondAttribute="trailing" constant="16" id="L8O-b1-Rg9"/>
+                <constraint firstItem="QM2-lN-FLT" firstAttribute="trailing" secondItem="e4V-QA-GoS" secondAttribute="trailing" id="Owc-R5-PBK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eMe-1c-ruZ" secondAttribute="bottom" constant="16" id="T1H-4c-qSc"/>
                 <constraint firstItem="v7m-aW-gXZ" firstAttribute="leading" secondItem="Hqc-LP-qlc" secondAttribute="trailing" constant="8" id="TQz-jD-0cP"/>
                 <constraint firstItem="e4V-QA-GoS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="VHx-z5-XeU"/>
@@ -65,13 +78,14 @@
                 <constraint firstItem="eMe-1c-ruZ" firstAttribute="trailing" secondItem="e4V-QA-GoS" secondAttribute="trailing" id="glk-DW-r5u"/>
                 <constraint firstItem="e4V-QA-GoS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="o0j-7i-6wV"/>
                 <constraint firstItem="Hqc-LP-qlc" firstAttribute="leading" secondItem="e4V-QA-GoS" secondAttribute="leading" id="oIs-vK-WG7"/>
+                <constraint firstItem="QM2-lN-FLT" firstAttribute="height" secondItem="v7m-aW-gXZ" secondAttribute="height" id="tHL-qN-Rkv"/>
                 <constraint firstItem="eMe-1c-ruZ" firstAttribute="leading" secondItem="e4V-QA-GoS" secondAttribute="leading" id="u9c-MI-1Fe"/>
                 <constraint firstItem="eMe-1c-ruZ" firstAttribute="top" secondItem="Hqc-LP-qlc" secondAttribute="bottom" constant="16" id="vKZ-8S-TWu"/>
                 <constraint firstItem="eMe-1c-ruZ" firstAttribute="top" secondItem="Hqc-LP-qlc" secondAttribute="bottom" constant="16" id="xyc-Gm-9H7"/>
                 <constraint firstItem="Hqc-LP-qlc" firstAttribute="top" secondItem="e4V-QA-GoS" secondAttribute="bottom" constant="40" id="zNk-4D-9r3"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="132" y="141"/>
+            <point key="canvasLocation" x="132" y="139.880059970015"/>
         </view>
     </objects>
 </document>

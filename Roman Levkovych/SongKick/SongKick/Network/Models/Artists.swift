@@ -9,8 +9,8 @@
 import Foundation
 
 struct Artist: Codable {
-    var id : Int?
-    var name : String?
+    var id: Int?
+    var name: String?
     var url : String?
     var onTourUntil: String?
     
