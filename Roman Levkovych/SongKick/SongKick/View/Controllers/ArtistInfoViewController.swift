@@ -18,14 +18,16 @@ class ArtistInfoViewController: UIViewController {
     @IBOutlet weak var onTourLabel: UILabel!
 
     var artist: Artist?
+    private var page: Int = 1
+    private var maximumPages: Int = 1
     private var events = [Event]()
-    private var venue: [Venue?]?
+    private var venues: [Venue?]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.initLabels()
-        configDelegates()
+        self.configDelegates()
         self.registerCells()
         
         self.searchCalendar()
@@ -41,14 +43,34 @@ class ArtistInfoViewController: UIViewController {
         guard let id = self.artist?.id else { return }
         NetworkManager.shared.getCalendar(for: id) {
             switch $0 {
-            case .success(let result):
+            case .success(let data):
                 DispatchQueue.main.async {
-                    guard let events = result.event else { return }
+                    guard let events = data.results?.event else { return }
+                    self.maximumPages = data.totalEntries / data.perPage + 1
                     self.events = events
                     self.eventsTableView.reloadData()
                 }
             case .error(let err):
                 Alert.showErrorAlert(on: self, message: err.rawValue)
+            }
+        }
+    }
+
+    fileprivate func searchCalendarPage() {
+        guard let id = self.artist?.id else { return }
+        self.page += 1
+        if self.page <= self.maximumPages {
+            NetworkManager.shared.getCalendarPage(for: id, page: self.page) {
+                switch $0 {
+                case .success(let data):
+                    DispatchQueue.main.async {
+                        guard let events = data.results?.event else { return }
+                        self.events += events
+                        self.eventsTableView.reloadData()
+                    }
+                case .error(let error):
+                    Alert.showErrorAlert(on: self, message: error.rawValue)
+                }
             }
         }
     }
@@ -79,7 +101,7 @@ class ArtistInfoViewController: UIViewController {
         switch segue.identifier {
         case Segues.showLocation.rawValue:
             guard let vc = segue.destination as? LocationViewController else { return }
-            vc.venue = self.venue
+            vc.venue = self.venues
         case Segues.showAllLocations.rawValue:
             guard let vc = segue.destination as? LocationViewController else { return }
             vc.venue = self.events.map { $0.venue }
@@ -113,8 +135,14 @@ extension ArtistInfoViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.venue = [self.events[indexPath.row].venue]
+        self.venues = [self.events[indexPath.row].venue]
 
         performSegue(withIdentifier: Segues.showLocation.rawValue, sender: self)
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == self.events.count - 1 {
+            self.searchCalendarPage()
+        }
     }
 }

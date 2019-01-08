@@ -26,6 +26,27 @@ struct Results: Codable {
     }
 }
 
+enum Answer: Decodable {
+    case artist([Artist])
+    case event([Event])
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        if let artist = try container.decodeIfPresent([Artist].self, forKey: .artist) {
+            self = .artist(artist)
+        } else {
+            self = .event(try container.decode([Event].self, forKey: .event))
+        }
+    }
+    enum CodingKeys: String, CodingKey {
+        case artist
+        case event
+    }
+
+
+}
+
 struct Event: Codable {
     var id: Int?
     var name: String?

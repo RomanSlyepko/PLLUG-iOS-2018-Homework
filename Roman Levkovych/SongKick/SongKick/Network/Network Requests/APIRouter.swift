@@ -14,18 +14,18 @@ protocol URLRequest {
 }
 
 enum APIRouter: URLRequest {
-    case searchArtist(String)
-    case searchArtistCalendar(Int)
+    case searchArtist(String, Int)
+    case searchArtistCalendar(Int, Int)
     
     var baseURLString: String { return  "https://api.songkick.com/api/3.0/" }
     private var apiKey: String { return "io09K9l3ebJxmxe2" }
     
     private var path: String {
         switch self {
-        case .searchArtist(let artist):
-            return "search/artists.json?apikey=\(apiKey)&query=\(artist)"
-        case .searchArtistCalendar(let id):
-            return "artists/\(id)/calendar.json?apikey=\(apiKey)"
+        case .searchArtist(let artist, let page):
+            return "search/artists.json?apikey=\(apiKey)&query=\(artist)&page=\(page)"
+        case .searchArtistCalendar(let id, let page):
+            return "artists/\(id)/calendar.json?apikey=\(apiKey)&page=\(page)"
         }
     }
     

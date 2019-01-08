@@ -15,7 +15,7 @@ class LocationViewController: UIViewController {
     @IBOutlet weak var concertLocationMapView: MKMapView!
 
     var venue: [Venue?]?
-    var annotation: [Annotation]?
+    private var annotation: [Annotation]?
 
     override func viewDidLoad() {
         super.viewDidLoad()

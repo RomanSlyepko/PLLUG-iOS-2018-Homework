@@ -10,8 +10,15 @@ import Foundation
 
 struct ResultsPage: Codable {
     var results: Results?
+    var totalEntries: Int
+    var page: Int
+    var perPage: Int
+
     
     enum CodingKeys: String, CodingKey {
         case results
+        case totalEntries
+        case page
+        case perPage
     }
 }

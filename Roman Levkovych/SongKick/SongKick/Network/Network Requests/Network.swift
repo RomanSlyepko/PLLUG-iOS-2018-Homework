@@ -15,7 +15,7 @@ enum NetworkErrors: String, Error {
 }
 
 enum NetworkResult {
-    case success(Results)
+    case success(ResultsPage)
     case error(NetworkErrors)
 }
 
@@ -46,18 +46,15 @@ class Network {
                 return
             }
             
-            guard
-                let apiResponse = try? JSONDecoder().decode(Response.self, from: data),
-                let results = apiResponse.resultsPage.results
-                else {
+            guard let apiResponse = try? JSONDecoder().decode(Response.self, from: data) else {
                     print("Error")
                     completion(.error(.DecodingError))
                     return
             }
+            
             DispatchQueue.main.async {
-                completion(.success(results))
+                completion(.success(apiResponse.resultsPage))
             }
-            }.resume()
+        }.resume()
     }
-    
 }

@@ -16,6 +16,8 @@ class SearchArtistViewController: UIViewController {
     @IBOutlet weak var foundArtistsTableView: UITableView!
     
     private var artistToPass: Artist?
+    private var page: Int = 1
+    private var maximumPages: Int = 1
     
     fileprivate func reloadTableView() {
         self.foundArtistsTableView.reloadData()
@@ -42,21 +44,36 @@ class SearchArtistViewController: UIViewController {
         
     }
     
-    func save(results: Results) {
-        DispatchQueue.main.async {
-            guard let artists = results.artist else { return }
-            DataStorager.shared.artists = artists
-            self.reloadTableView()
-        }
-    }
-    
-    func search(for artist: String) {
+    fileprivate func search(for artist: String) {
         NetworkManager.shared.getArtist(for: artist) {
             switch $0 {
             case .success(let data):
-                self.save(results: data)
+                DispatchQueue.main.async {
+                    guard let artists = data.results?.artist else { return }
+                    self.maximumPages = data.totalEntries / data.perPage + 1
+                    DataStorager.shared.artists = artists
+                    self.reloadTableView()
+                }
             case .error(let error):
                 Alert.showErrorAlert(on: self, message: error.rawValue)
+            }
+        }
+    }
+
+    fileprivate func searchNext(for artist: String) {
+        self.page += 1
+        if self.page <= self.maximumPages {
+            NetworkManager.shared.getArtistPage(for: artist, page: page) {
+                switch $0 {
+                case .success(let data):
+                    DispatchQueue.main.async {
+                        guard let artists = data.results?.artist else { return }
+                        DataStorager.shared.artists += artists
+                        self.reloadTableView()
+                    }
+                case .error(let error):
+                    Alert.showErrorAlert(on: self, message: error.rawValue)
+                }
             }
         }
     }
@@ -115,6 +132,16 @@ extension SearchArtistViewController: UITableViewDelegate {
         
         performSegue(withIdentifier: Segues.showInfo.rawValue, sender: self)
     }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == DataStorager.shared.artists.count - 1 {
+            guard
+                let artistName = self.searchArtistSearchBar.text,
+                let artistToSearch = validateArtist(artistName)
+                else { return }
+            self.searchNext(for: artistToSearch)
+        }
+    }
 }
 
 //MARK: - UISearchBarDelegate
@@ -122,9 +149,9 @@ extension SearchArtistViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        self.searchArtistSearchBar.resignFirstResponder()
+        searchBar.resignFirstResponder()
         guard
-            let artistName = self.searchArtistSearchBar.text,
+            let artistName = searchBar.text,
             let artistSearch = validateArtist(artistName)
             else {
                 Alert.showErrorAlert(on: self, message: "Incorrect artist name")
@@ -132,6 +159,16 @@ extension SearchArtistViewController: UISearchBarDelegate {
         }
         self.search(for: artistSearch)
     }
-    
-   
+
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
+
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
 }

@@ -163,6 +163,17 @@
 			path = SongKick;
 			sourceTree = "<group>";
 		};
+		3093040721E3F4A1004CC65B /* Network Requests */ = {
+			isa = PBXGroup;
+			children = (
+				301AAA7721BD2AA300539CDD /* Network.swift */,
+				30DA978921D2911600971DD2 /* NetworkManager.swift */,
+				30DA978721D28D4500971DD2 /* APIRouter.swift */,
+				30BF32F221CFEF64005139AE /* Validation.swift */,
+			);
+			path = "Network Requests";
+			sourceTree = "<group>";
+		};
 		30BF32F421CFF053005139AE /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,10 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				301AAA7621BD1B8000539CDD /* Models */,
-				301AAA7721BD2AA300539CDD /* Network.swift */,
-				30DA978921D2911600971DD2 /* NetworkManager.swift */,
-				30DA978721D28D4500971DD2 /* APIRouter.swift */,
-				30BF32F221CFEF64005139AE /* Validation.swift */,
+				3093040721E3F4A1004CC65B /* Network Requests */,
 				305FDFA221D5338A005036EF /* SKDateFormatter.swift */,
 			);
 			path = Network;
