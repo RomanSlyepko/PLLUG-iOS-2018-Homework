@@ -14,19 +14,21 @@ class FavoutireArtistViewController: UIViewController {
     @IBOutlet weak var favouriteArtistsTableView: UITableView!
     
     var artistToPass: Artist?
-    
+
+    // MARK: - Lyfecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         registerDelegates()
         registerNibs()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.favouriteArtistsTableView.reloadData()
     }
-    
+
+    // MARK: - Config UI
     fileprivate func registerNibs() {
         let nib = UINib(nibName: ArtistTableViewCell.identifier, bundle: nil)
         self.favouriteArtistsTableView.register(nib, forCellReuseIdentifier: ArtistTableViewCell.identifier)
@@ -36,7 +38,8 @@ class FavoutireArtistViewController: UIViewController {
         self.favouriteArtistsTableView.dataSource = self
         self.favouriteArtistsTableView.delegate = self
     }
-    
+
+    // MARK: - Swipe Actions
     fileprivate func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .destructive, title: "Delete") { action, view, completion in
             DataStorager.shared.favouriteArtists.remove(at: indexPath.row)
@@ -46,7 +49,8 @@ class FavoutireArtistViewController: UIViewController {
         
         return action
     }
-    
+
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segues.showInfo.rawValue {
             guard let vc = segue.destination as? ArtistInfoViewController else { return }

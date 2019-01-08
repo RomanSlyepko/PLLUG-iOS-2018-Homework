@@ -22,7 +22,8 @@ class ArtistInfoViewController: UIViewController {
     private var maximumPages: Int = 1
     private var events = [Event]()
     private var venues: [Venue?]?
-    
+
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +39,24 @@ class ArtistInfoViewController: UIViewController {
 
         self.eventsTableView.reloadData()
     }
+
+    // MARK: - Config UI Elemets
+    fileprivate func initLabels() {
+        self.artistNameLabel.text = self.artist?.name
+        self.dateUntilArtistOnTourLabel.text = self.artist?.onTourUntil
+    }
     
+    fileprivate func registerCells() {
+        let nib = UINib(nibName: ConcertLocationTableViewCell.identifier, bundle: nil)
+        self.eventsTableView.register(nib, forCellReuseIdentifier: ConcertLocationTableViewCell.identifier)
+    }
+    
+    fileprivate func configDelegates() {
+        self.eventsTableView.delegate = self
+        self.eventsTableView.dataSource = self
+    }
+
+    // MARK: - Requests
     fileprivate func searchCalendar() {
         guard let id = self.artist?.id else { return }
         NetworkManager.shared.getCalendar(for: id) {
@@ -75,28 +93,7 @@ class ArtistInfoViewController: UIViewController {
         }
     }
 
-    
-    fileprivate func initLabels() {
-        self.artistNameLabel.text = self.artist?.name
-        self.dateUntilArtistOnTourLabel.text = self.artist?.onTourUntil
-    }
-    
-    fileprivate func registerCells() {
-        let nib = UINib(nibName: ConcertLocationTableViewCell.identifier, bundle: nil)
-        self.eventsTableView.register(nib, forCellReuseIdentifier: ConcertLocationTableViewCell.identifier)
-    }
-    
-    fileprivate func configDelegates() {
-        self.eventsTableView.delegate = self
-        self.eventsTableView.dataSource = self
-    }
-
-    @IBAction func showAllVenues(_ sender: Any) {
-        if !self.events.isEmpty {
-             performSegue(withIdentifier: Segues.showAllLocations.rawValue, sender: self)
-        }
-    }
-
+    //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case Segues.showLocation.rawValue:
@@ -107,6 +104,12 @@ class ArtistInfoViewController: UIViewController {
             vc.venue = self.events.map { $0.venue }
         default:
             return
+        }
+    }
+
+    @IBAction func showAllVenues(_ sender: Any) {
+        if !self.events.isEmpty {
+            performSegue(withIdentifier: Segues.showAllLocations.rawValue, sender: self)
         }
     }
 }

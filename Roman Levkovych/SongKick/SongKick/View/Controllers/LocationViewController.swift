@@ -11,18 +11,20 @@ import MapKit
 
 class LocationViewController: UIViewController {
 
-    //MARK: - Properties
+    // MARK: - Properties
     @IBOutlet weak var concertLocationMapView: MKMapView!
 
     var venue: [Venue?]?
     private var annotation: [Annotation]?
 
+    // MARK: - Lyfecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.setUpAnnotations()
     }
 
+    // MARK: - Config UI
     fileprivate func setUpAnnotations() {
         self.annotation = self.venue?.compactMap { Annotation(title: $0?.name ?? "",
                                                               coordinate: CLLocationCoordinate2DMake($0?.latitude ?? 0,

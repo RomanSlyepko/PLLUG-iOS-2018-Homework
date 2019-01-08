@@ -18,7 +18,6 @@
 		305FDF9C21D4D997005036EF /* ArtistInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 305FDF9A21D4D997005036EF /* ArtistInfo.storyboard */; };
 		305FDF9F21D4E458005036EF /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FDF9E21D4E458005036EF /* Segues.swift */; };
 		305FDFA121D4E4FD005036EF /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FDFA021D4E4FD005036EF /* LocationViewController.swift */; };
-		305FDFA321D5338A005036EF /* SKDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FDFA221D5338A005036EF /* SKDateFormatter.swift */; };
 		305FDFA521D53C7A005036EF /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FDFA421D53C7A005036EF /* Venue.swift */; };
 		305FDFA721D751BD005036EF /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FDFA621D751BD005036EF /* Annotation.swift */; };
 		30922FAC21B9513600DF619F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30922FAB21B9513600DF619F /* AppDelegate.swift */; };
@@ -51,7 +50,6 @@
 		305FDF9B21D4D997005036EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SongKick/View/SongKick/View/Base.lproj/ArtistInfo.storyboard; sourceTree = "<group>"; };
 		305FDF9E21D4E458005036EF /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		305FDFA021D4E4FD005036EF /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
-		305FDFA221D5338A005036EF /* SKDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKDateFormatter.swift; sourceTree = "<group>"; };
 		305FDFA421D53C7A005036EF /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		305FDFA621D751BD005036EF /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		30922FA821B9513600DF619F /* SongKick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongKick.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,7 +188,6 @@
 			children = (
 				301AAA7621BD1B8000539CDD /* Models */,
 				3093040721E3F4A1004CC65B /* Network Requests */,
-				305FDFA221D5338A005036EF /* SKDateFormatter.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -282,7 +279,6 @@
 				301AAA7521BD1AE300539CDD /* Artists.swift in Sources */,
 				301AAA8321BECFC500539CDD /* ArtistTableViewCell.swift in Sources */,
 				30922FAC21B9513600DF619F /* AppDelegate.swift in Sources */,
-				305FDFA321D5338A005036EF /* SKDateFormatter.swift in Sources */,
 				30DA978821D28D4600971DD2 /* APIRouter.swift in Sources */,
 				301AAA7121BD1AB100539CDD /* ResultsPage.swift in Sources */,
 				30EFAFFA21BF12AB0008E895 /* Alert.swift in Sources */,

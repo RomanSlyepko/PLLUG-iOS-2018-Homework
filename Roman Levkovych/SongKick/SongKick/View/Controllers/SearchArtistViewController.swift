@@ -18,11 +18,8 @@ class SearchArtistViewController: UIViewController {
     private var artistToPass: Artist?
     private var page: Int = 1
     private var maximumPages: Int = 1
-    
-    fileprivate func reloadTableView() {
-        self.foundArtistsTableView.reloadData()
-    }
-    
+
+    // MARK: - Lyfecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,7 +27,12 @@ class SearchArtistViewController: UIViewController {
         registerNib()
         
     }
-    
+
+    // MARK: - Config UI
+    fileprivate func reloadTableView() {
+        self.foundArtistsTableView.reloadData()
+    }
+
     fileprivate func configureDelegates() {
         self.searchArtistSearchBar.delegate = self
         
@@ -43,7 +45,8 @@ class SearchArtistViewController: UIViewController {
         self.foundArtistsTableView.register(nib, forCellReuseIdentifier: ArtistTableViewCell.identifier)
         
     }
-    
+
+    // MARK: - Network Requests
     fileprivate func search(for artist: String) {
         NetworkManager.shared.getArtist(for: artist) {
             switch $0 {
@@ -77,7 +80,8 @@ class SearchArtistViewController: UIViewController {
             }
         }
     }
-    
+
+    // MARK: - Swipe Actions
     fileprivate func favouriteAction(at indexPath: IndexPath) -> UIContextualAction {
         let artist = DataStorager.shared.artists[indexPath.row]
         let action = UIContextualAction(style: .normal, title: "Add to Favourite") { action, view, completion in
@@ -91,7 +95,8 @@ class SearchArtistViewController: UIViewController {
         
         return action
     }
-    
+
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segues.showInfo.rawValue {
             guard let vc = segue.destination as? ArtistInfoViewController else { return }
