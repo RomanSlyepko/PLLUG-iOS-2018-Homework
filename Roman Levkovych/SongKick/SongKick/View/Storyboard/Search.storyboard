@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Ak-bH-qty">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search-->
+        <scene sceneID="BUn-zF-uri">
+            <objects>
+                <viewController id="W4Y-qf-JxE" customClass="SearchArtistViewController" customModule="SongKick" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gaR-Uf-Tv5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pgD-cP-sCx">
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="Search..." translatesAutoresizingMaskIntoConstraints="NO" id="yfM-KU-Obm">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yfM-KU-Obm" firstAttribute="trailing" secondItem="TWx-IL-NF3" secondAttribute="trailing" id="8bW-7f-goK"/>
+                            <constraint firstItem="pgD-cP-sCx" firstAttribute="top" secondItem="yfM-KU-Obm" secondAttribute="bottom" id="AJB-yt-6Oa"/>
+                            <constraint firstItem="yfM-KU-Obm" firstAttribute="leading" secondItem="TWx-IL-NF3" secondAttribute="leading" id="G2U-Ye-WyR"/>
+                            <constraint firstItem="yfM-KU-Obm" firstAttribute="top" secondItem="TWx-IL-NF3" secondAttribute="top" id="L2f-LM-jJF"/>
+                            <constraint firstItem="pgD-cP-sCx" firstAttribute="bottom" secondItem="TWx-IL-NF3" secondAttribute="bottom" id="ikN-UZ-RUH"/>
+                            <constraint firstItem="pgD-cP-sCx" firstAttribute="trailing" secondItem="TWx-IL-NF3" secondAttribute="trailing" id="xzT-pg-4ur"/>
+                            <constraint firstItem="pgD-cP-sCx" firstAttribute="leading" secondItem="TWx-IL-NF3" secondAttribute="leading" id="ylJ-oP-SLe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TWx-IL-NF3"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search" id="uOS-v7-99z"/>
+                    <connections>
+                        <outlet property="foundArtistsTableView" destination="pgD-cP-sCx" id="LGJ-a1-Ndo"/>
+                        <outlet property="searchArtistSearchBar" destination="yfM-KU-Obm" id="jBr-6N-6mZ"/>
+                        <segue destination="ErB-dv-T2W" kind="show" identifier="showInfo" id="axB-Ma-kaZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pUN-Sw-BYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3024.8000000000002" y="1022.3388305847077"/>
+        </scene>
+        <!--ArtistInfo-->
+        <scene sceneID="a0W-2f-7Ue">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ArtistInfo" id="ErB-dv-T2W" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ij-tu-Yh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3848" y="1022"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="ds9-t9-fAk">
+            <objects>
+                <navigationController title="Search" automaticallyAdjustsScrollViewInsets="NO" id="2Ak-bH-qty" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="h34-f3-xc4"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7WG-0T-Mde">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="W4Y-qf-JxE" kind="relationship" relationship="rootViewController" id="tfV-IN-gNO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EJS-ub-Nhk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2085.5999999999999" y="1022.3388305847077"/>
+        </scene>
+    </scenes>
+</document>
